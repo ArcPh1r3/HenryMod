@@ -1,4 +1,5 @@
 ﻿using EntityStates;
+using HenryMod.Modules.Components;
 using HenryMod.SkillStates.BaseStates;
 using RoR2;
 using UnityEngine;
@@ -7,8 +8,12 @@ namespace HenryMod.SkillStates.Stinger
 {
     public class Uppercut : BaseMeleeAttack
     {
+        private HenryFuryComponent furyComponent;
+
         public override void OnEnter()
         {
+            this.furyComponent = base.gameObject.GetComponent<HenryFuryComponent>();
+
             this.hitboxName = "Punch";
 
             this.damageType = DamageType.Stun1s;
@@ -65,6 +70,8 @@ namespace HenryMod.SkillStates.Stinger
         protected override void OnHitEnemyAuthority()
         {
             base.OnHitEnemyAuthority();
+
+            if (this.furyComponent) this.furyComponent.AddFury(3f);
         }
 
         protected override void SetNextState()

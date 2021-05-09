@@ -43,12 +43,19 @@ namespace HenryMod.Modules
 
         internal static void RegisterNewSurvivor(GameObject bodyPrefab, GameObject displayPrefab, Color charColor, string namePrefix, float sortPosition) { RegisterNewSurvivor(bodyPrefab, displayPrefab, charColor, namePrefix, null, sortPosition); }
 
+        internal static void RegisterNewSurvivor(GameObject bodyPrefab, GameObject displayPrefab, Color charColor, string namePrefix, UnlockableDef unlockableDef) { RegisterNewSurvivor(bodyPrefab, displayPrefab, charColor, namePrefix, unlockableDef, 100f); }
+
         internal static GameObject CreateDisplayPrefab(string modelName, GameObject prefab)
+        {
+            return CreateDisplayPrefab(modelName, prefab, new BodyInfo());
+        }
+
+        internal static GameObject CreateDisplayPrefab(string modelName, GameObject prefab, BodyInfo bodyInfo)
         {
             GameObject newPrefab = PrefabAPI.InstantiateClone(Resources.Load<GameObject>("Prefabs/CharacterBodies/CommandoBody"), modelName + "Prefab");
 
             GameObject model = CreateModel(newPrefab, modelName);
-            Transform modelBaseTransform = SetupModel(newPrefab, model.transform);
+            Transform modelBaseTransform = SetupModel(newPrefab, model.transform, bodyInfo);
 
             model.AddComponent<CharacterModel>().baseRendererInfos = prefab.GetComponentInChildren<CharacterModel>().baseRendererInfos;
 

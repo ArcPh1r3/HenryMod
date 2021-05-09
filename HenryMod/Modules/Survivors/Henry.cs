@@ -1,9 +1,12 @@
 ﻿using BepInEx.Configuration;
 using RoR2;
 using RoR2.Skills;
+using RoR2.UI;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace HenryMod.Modules.Survivors
 {
@@ -31,7 +34,8 @@ namespace HenryMod.Modules.Survivors
             jumpCount = 1,
             maxHealth = 110f,
             subtitleNameToken = HenryPlugin.developerPrefix + "_HENRY_BODY_SUBTITLE",
-            podPrefab = Resources.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod")
+            podPrefab = Resources.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
+            aimOriginPosition = new Vector3(0f, 2f, 0f)
         };
 
         internal static Material henryMat = Modules.Assets.CreateMaterial("matHenry");
@@ -113,9 +117,15 @@ namespace HenryMod.Modules.Survivors
         {
             base.InitializeCharacter();
 
+            if (HenryPlugin.scepterInstalled) CreateScepterSkills();
+
             this.bodyPrefab.GetComponent<SfxLocator>().deathSound = "HenryDeath";
             this.bodyPrefab.AddComponent<Components.HenryController>();
             this.bodyPrefab.AddComponent<Components.HenryTracker>();
+            this.bodyPrefab.AddComponent<Components.HenryFuryComponent>();
+            this.bodyPrefab.GetComponent<CameraTargetParams>().cameraParams = HenryPlugin.defaultCameraParams;
+
+            On.RoR2.UI.HUD.Awake += HUDAwake;
         }
 
         internal override void InitializeUnlockables()
@@ -382,12 +392,35 @@ namespace HenryMod.Modules.Survivors
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddSpecialSkills(bodyPrefab, bombSkillDef, bazookaSkillDef);
+            SkillDef frenzySkillDef = Modules.Skills.CreateFurySkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_HENRY_BODY_SPECIAL_FRENZY_NAME",
+                skillNameToken = prefix + "_HENRY_BODY_SPECIAL_FRENZY_NAME",
+                skillDescriptionToken = prefix + "_HENRY_BODY_SPECIAL_FRENZY_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texFrenzyIcon"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Henry.Frenzy.EnterFrenzy)),
+                activationStateMachineName = "Body",
+                baseMaxStock = 1,
+                baseRechargeInterval = 0f,
+                beginSkillCooldownOnSkillEnd = false,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = true,
+                rechargeStock = 100,
+                requiredStock = 0,
+                stockToConsume = 0
+            });
+
+            Modules.Skills.AddSpecialSkills(bodyPrefab, bombSkillDef, bazookaSkillDef, frenzySkillDef);
             #endregion
         }
 
-        // dead for now until scepter gets fixed
-        /*[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private static void CreateScepterSkills()
         {
             string prefix = HenryPlugin.developerPrefix;
@@ -407,13 +440,12 @@ namespace HenryMod.Modules.Survivors
                 forceSprintDuringState = false,
                 fullRestockOnAssign = true,
                 interruptPriority = EntityStates.InterruptPriority.Skill,
-                isBullets = false,
+                resetCooldownTimerOnUse = false,
                 isCombatSkill = true,
                 mustKeyPress = false,
-                noSprint = true,
+                cancelSprintingOnActivation = true,
                 rechargeStock = 1,
                 requiredStock = 1,
-                shootDelay = 0f,
                 stockToConsume = 1
             });
 
@@ -432,13 +464,12 @@ namespace HenryMod.Modules.Survivors
                 forceSprintDuringState = false,
                 fullRestockOnAssign = true,
                 interruptPriority = EntityStates.InterruptPriority.Skill,
-                isBullets = false,
+                resetCooldownTimerOnUse = false,
                 isCombatSkill = true,
                 mustKeyPress = false,
-                noSprint = true,
+                cancelSprintingOnActivation = true,
                 rechargeStock = 1,
                 requiredStock = 1,
-                shootDelay = 0f,
                 stockToConsume = 1
             });
 
@@ -457,13 +488,12 @@ namespace HenryMod.Modules.Survivors
                 forceSprintDuringState = false,
                 fullRestockOnAssign = true,
                 interruptPriority = EntityStates.InterruptPriority.Any,
-                isBullets = false,
+                resetCooldownTimerOnUse = false,
                 isCombatSkill = true,
                 mustKeyPress = false,
-                noSprint = true,
+                cancelSprintingOnActivation = true,
                 rechargeStock = 1,
                 requiredStock = 1,
-                shootDelay = 0f,
                 stockToConsume = 1
             });
 
@@ -482,19 +512,43 @@ namespace HenryMod.Modules.Survivors
                 forceSprintDuringState = false,
                 fullRestockOnAssign = true,
                 interruptPriority = EntityStates.InterruptPriority.Any,
-                isBullets = false,
+                resetCooldownTimerOnUse = false,
                 isCombatSkill = true,
                 mustKeyPress = false,
-                noSprint = true,
+                cancelSprintingOnActivation = true,
                 rechargeStock = 1,
                 requiredStock = 1,
-                shootDelay = 0f,
                 stockToConsume = 1
             });
 
-            AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(bombSkillDef, bodyName, SkillSlot.Special, 0);
-            AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(bazookaSkillDef, bodyName, SkillSlot.Special, 1);
-        }*/
+            SkillDef frenzySkillDef = Modules.Skills.CreateFurySkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_HENRY_BODY_SCEPSPECIAL_FRENZY_NAME",
+                skillNameToken = prefix + "_HENRY_BODY_SPECIAL_SCEPFRENZY_NAME",
+                skillDescriptionToken = prefix + "_HENRY_BODY_SPECIAL_SCEPFRENZY_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texFrenzyIconScepter"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Henry.Frenzy.Scepter.EnterFrenzy)),
+                activationStateMachineName = "Body",
+                baseMaxStock = 1,
+                baseRechargeInterval = 0f,
+                beginSkillCooldownOnSkillEnd = false,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = true,
+                rechargeStock = 100,
+                requiredStock = 0,
+                stockToConsume = 0
+            });
+
+            AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(bombSkillDef, instance.fullBodyName, SkillSlot.Special, 0);
+            AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(bazookaSkillDef, instance.fullBodyName, SkillSlot.Special, 1);
+            AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(frenzySkillDef, instance.fullBodyName, SkillSlot.Special, 2);
+        }
 
         internal override void InitializeSkins()
         {
@@ -3404,5 +3458,23 @@ localScale = new Vector3(0.1233F, 0.1233F, 0.1233F),
 
             return newRendererInfos;
         }
+
+        #region Hooks
+        #region HUD
+        internal static void HUDAwake(On.RoR2.UI.HUD.orig_Awake orig, HUD self)
+        {
+            orig(self);
+
+            Components.FuryHUD furyHud = self.gameObject.AddComponent<Components.FuryHUD>();
+
+            GameObject furyGauge = UnityEngine.Object.Instantiate<GameObject>(Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("FuryGauge"), self.transform.Find("MainContainer").Find("MainUIArea").Find("SpringCanvas").Find("BottomLeftCluster"));
+            furyGauge.GetComponent<RectTransform>().localPosition = Vector3.zero;
+            furyGauge.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -147.8f);
+            furyGauge.GetComponent<RectTransform>().localScale = new Vector3(0.72f, 0.15f, 1f);
+            furyHud.furyGauge = furyGauge;
+            furyHud.furyFill = furyGauge.transform.Find("GaugeFill").gameObject.GetComponent<Image>();
+        }
+        #endregion
+        #endregion
     }
 }

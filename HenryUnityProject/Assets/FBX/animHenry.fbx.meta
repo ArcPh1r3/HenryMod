@@ -230,6 +230,8 @@ ModelImporter:
     7400232: Armature|Respawn
     7400234: Armature|ReloadPistol
     7400236: Armature|ReloadUzi
+    7400238: Armature|FrenzyEnter
+    7400240: Armature|FrenzyExit
     9500000: //RootNode
     13700000: meshHenry
     13700002: MeshHenryGun

@@ -15,6 +15,10 @@ namespace HenryMod.Modules.Components
         private HenryTracker tracker;
         private Animator modelAnimator;
 
+        private bool inFrenzy;
+        private ParticleSystem[] frenzyEffects;
+        private ParticleSystem superSaiyanEffect;
+
         private void Awake()
         {
             this.characterBody = this.gameObject.GetComponent<CharacterBody>();
@@ -23,8 +27,29 @@ namespace HenryMod.Modules.Components
             this.tracker = this.gameObject.GetComponent<HenryTracker>();
             this.modelAnimator = this.gameObject.GetComponentInChildren<Animator>();
             this.hasBazookaReady = false;
+            this.inFrenzy = false;
+
+            this.frenzyEffects = new ParticleSystem[]
+            {
+                this.childLocator.FindChild("FrenzyEffect").gameObject.GetComponent<ParticleSystem>(),
+                this.childLocator.FindChild("FrenzyFistEffectL").gameObject.GetComponent<ParticleSystem>(),
+                this.childLocator.FindChild("FrenzyFistEffectR").gameObject.GetComponent<ParticleSystem>()
+            };
+
+            this.superSaiyanEffect = this.childLocator.FindChild("SuperSaiyanEffect").gameObject.GetComponent<ParticleSystem>();
 
             Invoke("CheckWeapon", 0.2f);
+        }
+
+        private void FixedUpdate()
+        {
+            if (this.inFrenzy)
+            {
+                if (!this.characterBody.HasBuff(Modules.Buffs.frenzyBuff) && !this.characterBody.HasBuff(Modules.Buffs.frenzyScepterBuff))
+                {
+                    this.ExitFrenzy();
+                }
+            }
         }
 
         private void CheckWeapon()
@@ -69,6 +94,15 @@ namespace HenryMod.Modules.Components
                 this.childLocator.FindChild("GunModel").GetComponent<SkinnedMeshRenderer>().sharedMesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshUzi");
             }
 
+            bool hasFury = (this.characterBody.skillLocator.special.skillDef.skillNameToken == HenryPlugin.developerPrefix + "_HENRY_BODY_SPECIAL_FRENZY_NAME");
+            if (this.characterBody.skillLocator.special.skillDef.skillNameToken == HenryPlugin.developerPrefix + "_HENRY_BODY_SPECIAL_SCEPFRENZY_NAME") hasFury = true;
+
+            if (!hasFury)
+            {
+                HenryFuryComponent furyComponent = this.GetComponent<HenryFuryComponent>();
+                if (furyComponent) Destroy(furyComponent);
+            }
+
             if (!hasTrackingSkill && this.tracker) Destroy(this.tracker);
         }
 
@@ -87,6 +121,50 @@ namespace HenryMod.Modules.Components
             }
 
             this.characterBody.crosshairPrefab = desiredCrosshair;
+        }
+
+        public void EnterFrenzy()
+        {
+            this.inFrenzy = true;
+
+            if (Modules.Config.rampageEffects.Value)
+            {
+                for (int i = 0; i < this.frenzyEffects.Length; i++)
+                {
+                    if (this.frenzyEffects[i]) this.frenzyEffects[i].Play();
+                }
+            }
+        }
+
+        public void EnterScepterFrenzy()
+        {
+            this.inFrenzy = true;
+
+            if (Modules.Config.rampageEffects.Value)
+            {
+                for (int i = 0; i < this.frenzyEffects.Length; i++)
+                {
+                    if (this.frenzyEffects[i]) this.frenzyEffects[i].Play();
+                }
+            }
+
+            this.childLocator.FindChild("SaiyanHair").gameObject.SetActive(true);
+        }
+
+        private void ExitFrenzy()
+        {
+            this.inFrenzy = false;
+
+            if (Modules.Config.rampageEffects.Value)
+            {
+                for (int i = 0; i < this.frenzyEffects.Length; i++)
+                {
+                    if (this.frenzyEffects[i]) this.frenzyEffects[i].Stop();
+                }
+            }
+
+            //if (this.superSaiyanEffect) this.superSaiyanEffect.Stop();
+            this.childLocator.FindChild("SaiyanHair").gameObject.SetActive(false);
         }
     }
 }

@@ -64,7 +64,7 @@ namespace HenryMod.SkillStates.Nemry
 
             this.CreateBlinkEffect(Util.GetCorePosition(base.gameObject));
 
-            this.SpendEnergy(10f, SkillSlot.Utility);
+            this.SpendEnergy(5f, SkillSlot.Utility);
         }
 
         private void CreateBlinkEffect(Vector3 origin)

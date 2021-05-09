@@ -61,7 +61,7 @@ namespace HenryMod.SkillStates.Nemry.Torrent
 
             EffectManager.SimpleMuzzleFlash(EntityStates.Engi.EngiWeapon.FireGrenades.effectPrefab, base.gameObject, this.muzzleString, false);
             
-            Util.PlaySound("NemryShootEnergy", base.gameObject);
+            Util.PlaySound("NemryShootEnergyAlt", base.gameObject);
 
             if (base.fixedAge >= this.startDuration) base.PlayAnimation("FullBody, Override", "AirTorrentLoop", "Torrent.playbackRate", this.fireInterval);
 

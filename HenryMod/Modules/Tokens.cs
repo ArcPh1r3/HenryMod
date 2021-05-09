@@ -90,6 +90,12 @@ namespace HenryMod.Modules
 
             LanguageAPI.Add(prefix + "PRIMARY_SCEPBAZOOKA_NAME", "Fire");
             LanguageAPI.Add(prefix + "PRIMARY_SCEPBAZOOKA_DESCRIPTION", $"Charge and fire a rocket for <style=cIsDamage>{100f * StaticValues.bazookaMinDamageCoefficient}%-{100f * StaticValues.bazookaMaxDamageCoefficient}% damage</style>." + Helpers.ScepterDescription("Hold two Bazookas at once."));
+
+            LanguageAPI.Add(prefix + "SPECIAL_FRENZY_NAME", "Rampage");
+            LanguageAPI.Add(prefix + "SPECIAL_FRENZY_DESCRIPTION", $"Charge up <style=cIsHealth>Fury</style> on hit. Use when fully charged to enter a <style=cIsDamage>frenzy</style> for <style=cIsUtility>10 seconds</style>. <style=cIsHealth>Charges faster at lower health.</style>");
+
+            LanguageAPI.Add(prefix + "SPECIAL_SCEPFRENZY_NAME", "Super Saiyan");
+            LanguageAPI.Add(prefix + "SPECIAL_SCEPFRENZY_DESCRIPTION", $"Charge up <style=cIsHealth>Fury</style> on hit. Use when fully charged to enter a <style=cIsDamage>frenzy</style> for <style=cIsUtility>10 seconds</style>. <style=cIsHealth>Charges faster at lower health.</style>" + Helpers.ScepterDescription("Stat bonuses massively increased. Duration increased."));
             #endregion
 
             #region Achievements
@@ -166,13 +172,13 @@ namespace HenryMod.Modules
             prefix = HenryPlugin.developerPrefix + "_NEMRY_BODY_";
 
             desc = "Nemesis Henry is a volatile swordsman who wields a special blade that stores energy to boost its attacks. He has no cooldowns, but must manage his energy well.<color=#CCD3E0>" + Environment.NewLine + Environment.NewLine;
-            desc += "< ! > Sword is a good all-rounder while Boxing Gloves are better for laying a beatdown on more powerful foes." + Environment.NewLine + Environment.NewLine;
-            desc += "< ! > Pistol is a powerful anti air, with its low cooldown and high damage." + Environment.NewLine + Environment.NewLine;
-            desc += "< ! > Roll has a lingering armor buff that helps to use it aggressively." + Environment.NewLine + Environment.NewLine;
-            desc += "< ! > Bomb can be used to wipe crowds with ease." + Environment.NewLine + Environment.NewLine;
+            desc += "< ! > Sword Mode is used to build up energy while Gun Mode is used to spend energy for powerful attacks." + Environment.NewLine + Environment.NewLine;
+            desc += "< ! > Swordmaster can be charged up for more damage." + Environment.NewLine + Environment.NewLine;
+            desc += "< ! > Flash Step is a powerful aggressive tool that helps to build up energy." + Environment.NewLine + Environment.NewLine;
+            desc += "< ! > Use Hydra Bite to stay healthy and Hyper Beam to unleash a ton of damage." + Environment.NewLine + Environment.NewLine;
 
-            outro = "..and so he left, bottom text.";
-            outroFailure = "..and so he left, bottom text.";
+            outro = "..and so he left, having blown up the moon for no discernible reason.";
+            outroFailure = "..he tried so hard, and got so far. But in the end it doesn't even matter.";
 
             LanguageAPI.Add(prefix + "NAME", "Nemesis Henry");
             LanguageAPI.Add(prefix + "DESCRIPTION", desc);
@@ -202,12 +208,12 @@ namespace HenryMod.Modules
             LanguageAPI.Add(prefix + "PRIMARY_SWORD_NAME", "Sword Mode");
             LanguageAPI.Add(prefix + "PRIMARY_SWORD_DESCRIPTION", desc);
 
-            desc = $"<style=cIsHealing>5% Energy.</style> Fire a piercing <style=cIsHealing>Energy</style> shot for <style=cIsDamage>{100f * SkillStates.Nemry.ShootGun.boostedDamageCoefficient}% damage</style>.";
+            desc = $"<style=cIsHealing>2.5% Energy.</style> Fire a piercing <style=cIsHealing>Energy</style> shot for <style=cIsDamage>{100f * SkillStates.Nemry.ShootGun.boostedDamageCoefficient}% damage</style>.";
             LanguageAPI.Add(prefix + "PRIMARY_GUN_NAME", "Gun Mode");
             LanguageAPI.Add(prefix + "PRIMARY_GUN_DESCRIPTION", desc);
 
             desc = $"Swing your blade for <style=cIsDamage>{100f * 2.8f}% damage</style>. Generate <style=cIsHealing>20% Energy</style> on hit.";
-            desc += $"\n<style=cIsHealing>5% Energy.</style> Fire a piercing <style=cIsHealing>Energy</style> shot for <style=cIsDamage>{100f * SkillStates.Nemry.ShootGun.boostedDamageCoefficient}% damage</style>.";
+            desc += $"\n<style=cIsHealing>2.5% Energy.</style> Fire a piercing <style=cIsHealing>Energy</style> shot for <style=cIsDamage>{100f * SkillStates.Nemry.ShootGun.boostedDamageCoefficient}% damage</style>.";
             LanguageAPI.Add(prefix + "PRIMARY_SWORDCSS_NAME", "Sword Mode / Gun Mode");
             LanguageAPI.Add(prefix + "PRIMARY_SWORDCSS_DESCRIPTION", desc);
             #endregion
@@ -216,16 +222,16 @@ namespace HenryMod.Modules
             LanguageAPI.Add(prefix + "SECONDARY_BLAST_NAME", "Null Blast");
             LanguageAPI.Add(prefix + "SECONDARY_BLAST_DESCRIPTION", Helpers.agilePrefix + $"Throw a blob of <style=cIsHealth>mysterious energy</style> for <style=cIsDamage>{100f * SkillStates.Nemry.VoidBlast.damageCoefficient}% damage</style>.");
 
-            desc = $"<style=cIsHealing>25% Energy.</style> Lunge at a nearby enemy for <style=cIsDamage>{100f * SkillStates.Nemry.ChargeSlash.Lunge.minDamageCoefficient}% damage</style>. Perform a combo attack instead if within melee range.";
+            desc = $"<style=cIsHealing>10% Energy.</style> Lunge at a nearby enemy for <style=cIsDamage>{100f * SkillStates.Nemry.ChargeSlash.Lunge.minDamageCoefficient}% damage</style>. Perform a combo attack instead if within melee range.";
             LanguageAPI.Add(prefix + "SECONDARY_CHARGE_NAME", "Swordmaster");
             LanguageAPI.Add(prefix + "SECONDARY_CHARGE_DESCRIPTION", desc);
 
-            desc = $"<style=cIsHealing>10% Energy.</style> Fire a barrage of <style=cIsHealing>Energy</style> shots. Hold to continue firing, consuming more <style=cIsHealing>Energy</style> per shot.";
+            desc = $"<style=cIsHealing>5% Energy.</style> Fire a barrage of <style=cIsHealing>Energy</style> shots. Hold to continue firing, consuming more <style=cIsHealing>Energy</style> per shot.";
             LanguageAPI.Add(prefix + "SECONDARY_TORRENT_NAME", "Gunslinger");
             LanguageAPI.Add(prefix + "SECONDARY_TORRENT_DESCRIPTION", desc);
 
-            desc = $"<style=cIsHealing>25% Energy.</style> Lunge at a nearby enemy for <style=cIsDamage>{100f * SkillStates.Nemry.ChargeSlash.Lunge.minDamageCoefficient}% damage</style>.";
-            desc += $"\n<style=cIsHealing>10% Energy.</style> Fire a barrage of <style=cIsHealing>Energy</style> shots.";
+            desc = $"<style=cIsHealing>10% Energy.</style> Lunge at a nearby enemy for <style=cIsDamage>{100f * SkillStates.Nemry.ChargeSlash.Lunge.minDamageCoefficient}% damage</style>.";
+            desc += $"\n<style=cIsHealing>5% Energy.</style> Fire a barrage of <style=cIsHealing>Energy</style> shots.";
             LanguageAPI.Add(prefix + "SECONDARY_CHARGECSS_NAME", "Swordmaster / Gunslinger");
             LanguageAPI.Add(prefix + "SECONDARY_CHARGECSS_DESCRIPTION", desc);
             #endregion
@@ -234,26 +240,26 @@ namespace HenryMod.Modules
             LanguageAPI.Add(prefix + "UTILITY_DODGESLASH_NAME", "Swift Slash");
             LanguageAPI.Add(prefix + "UTILITY_DODGESLASH_DESCRIPTION", "Backflip, slashing nearby enemies for <style=cIsDamage>300% damage</style>. <style=cIsUtility>You cannot be hit during the flip.</style>");
 
-            desc = "<style=cIsHealing>10% Energy.</style> <style=cIsUtility>Instantly blink</style> to a nearby enemy.";
+            desc = "<style=cIsHealing>5% Energy.</style> <style=cIsUtility>Instantly blink</style> to a nearby enemy.";
             LanguageAPI.Add(prefix + "UTILITY_BLINK_NAME", "Flash Step");
             LanguageAPI.Add(prefix + "UTILITY_BLINK_DESCRIPTION", desc);
 
-            desc = "<style=cIsHealing>20% Energy.</style> Discharge a burst of <style=cIsHealing>Energy</style> for <style=cIsDamage>400% damage</style>, <style=cIsUtility>launching yourself with the recoil</style>.";
+            desc = "<style=cIsHealing>10% Energy.</style> Discharge a burst of <style=cIsHealing>Energy</style> for <style=cIsDamage>400% damage</style>, <style=cIsUtility>launching yourself with the recoil</style>.";
             LanguageAPI.Add(prefix + "UTILITY_BURST_NAME", "Energy Burst");
             LanguageAPI.Add(prefix + "UTILITY_BURST_DESCRIPTION", desc);
 
-            desc = "<style=cIsHealing>10% Energy.</style> <style=cIsUtility>Instantly blink</style> to a nearby enemy.";
-            desc += "\n<style=cIsHealing>20% Energy.</style> Discharge a burst of <style=cIsHealing>Energy</style> for <style=cIsDamage>400% damage</style>.";
+            desc = "<style=cIsHealing>5% Energy.</style> <style=cIsUtility>Instantly blink</style> to a nearby enemy.";
+            desc += "\n<style=cIsHealing>10% Energy.</style> Discharge a burst of <style=cIsHealing>Energy</style> for <style=cIsDamage>400% damage</style>.";
             LanguageAPI.Add(prefix + "UTILITY_BLINKCSS_NAME", "Flash Step / Energy Burst");
             LanguageAPI.Add(prefix + "UTILITY_BLINKCSS_DESCRIPTION", desc);
             #endregion
 
             #region Special
-            desc = $"<style=cIsHealing>100% Energy.</style> Plunge your blade into an enemy for <style=cIsDamage>2800% damage</style>, inflicting a potent debuff. <style=cIsHealing>Heal for 50% of damage dealt.</style>";
+            desc = $"<style=cIsHealing>100% Energy.</style> Plunge your blade into an enemy for <style=cIsDamage>{100f * 28}% damage</style>, inflicting a potent debuff. <style=cIsHealing>Heal for 50% of damage dealt.</style>";
             LanguageAPI.Add(prefix + "SPECIAL_STAB_NAME", "Hydra Bite");
             LanguageAPI.Add(prefix + "SPECIAL_STAB_DESCRIPTION", desc);
 
-            desc = $"<style=cIsHealing>100% Energy.</style> Charge up a powerful beam that deals <style=cIsDamage>8x400% damage</style>.";
+            desc = $"<style=cIsHealing>100% Energy.</style> Charge up a powerful barrage of lasers that deals <style=cIsDamage>{10}x{100f * SkillStates.Nemry.Beam.FireBeamBarrage.laserDamageCoefficient}% damage</style>.";
             LanguageAPI.Add(prefix + "SPECIAL_BEAM_NAME", "Hyper Beam");
             LanguageAPI.Add(prefix + "SPECIAL_BEAM_DESCRIPTION", desc);
 

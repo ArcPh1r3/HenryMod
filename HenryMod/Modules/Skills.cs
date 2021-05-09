@@ -266,6 +266,39 @@ namespace HenryMod.Modules
             return skillDef;
         }
 
+        internal static SkillDef CreateFurySkillDef(SkillDefInfo skillDefInfo)
+        {
+            HenryFurySkillDef skillDef = ScriptableObject.CreateInstance<HenryFurySkillDef>();
+
+            skillDef.skillName = skillDefInfo.skillName;
+            skillDef.skillNameToken = skillDefInfo.skillNameToken;
+            skillDef.skillDescriptionToken = skillDefInfo.skillDescriptionToken;
+            skillDef.icon = skillDefInfo.skillIcon;
+
+            skillDef.activationState = skillDefInfo.activationState;
+            skillDef.activationStateMachineName = skillDefInfo.activationStateMachineName;
+            skillDef.baseMaxStock = skillDefInfo.baseMaxStock;
+            skillDef.baseRechargeInterval = skillDefInfo.baseRechargeInterval;
+            skillDef.beginSkillCooldownOnSkillEnd = skillDefInfo.beginSkillCooldownOnSkillEnd;
+            skillDef.canceledFromSprinting = skillDefInfo.canceledFromSprinting;
+            skillDef.forceSprintDuringState = skillDefInfo.forceSprintDuringState;
+            skillDef.fullRestockOnAssign = skillDefInfo.fullRestockOnAssign;
+            skillDef.interruptPriority = skillDefInfo.interruptPriority;
+            skillDef.resetCooldownTimerOnUse = skillDefInfo.resetCooldownTimerOnUse;
+            skillDef.isCombatSkill = skillDefInfo.isCombatSkill;
+            skillDef.mustKeyPress = skillDefInfo.mustKeyPress;
+            skillDef.cancelSprintingOnActivation = skillDefInfo.cancelSprintingOnActivation;
+            skillDef.rechargeStock = skillDefInfo.rechargeStock;
+            skillDef.requiredStock = skillDefInfo.requiredStock;
+            skillDef.stockToConsume = skillDefInfo.stockToConsume;
+
+            skillDef.keywordTokens = skillDefInfo.keywordTokens;
+
+            skillDefs.Add(skillDef);
+
+            return skillDef;
+        }
+
         internal static SkillDef CreateTrackingEnergySkillDef(SkillDefInfo skillDefInfo)
         {
             TrackingEnergySkillDef skillDef = ScriptableObject.CreateInstance<TrackingEnergySkillDef>();

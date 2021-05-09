@@ -24,7 +24,7 @@ namespace HenryMod.SkillStates.Nemry
             base.characterBody.bodyFlags |= CharacterBody.BodyFlags.IgnoreFallDamage;
 
             this.Fire();
-            this.SpendEnergy(20, SkillSlot.Utility);
+            this.SpendEnergy(10, SkillSlot.Utility);
             base.PlayAnimation("Gesture, Override", "ShootGun", "ShootGun.playbackRate", Burst.baseDuration);
         }
 

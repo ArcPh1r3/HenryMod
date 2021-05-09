@@ -15,6 +15,14 @@ namespace HenryMod.Modules.Survivors
         internal abstract GameObject bodyPrefab { get; set;  }
         internal abstract GameObject displayPrefab { get; set; }
 
+        internal string fullBodyName
+        {
+            get
+            {
+                return bodyName + "Body";
+            }
+        }
+
         internal abstract ConfigEntry<bool> characterEnabled { get; set; }
 
         internal abstract UnlockableDef characterUnlockableDef { get; set; }
@@ -49,9 +57,9 @@ namespace HenryMod.Modules.Survivors
 
                 Modules.Prefabs.SetupCharacterModel(bodyPrefab, customRendererInfos, mainRendererIndex);
 
-                displayPrefab = Modules.Prefabs.CreateDisplayPrefab(bodyName + "Display", bodyPrefab);
+                displayPrefab = Modules.Prefabs.CreateDisplayPrefab(bodyName + "Display", bodyPrefab, bodyInfo);
 
-                Modules.Prefabs.RegisterNewSurvivor(bodyPrefab, displayPrefab, Color.grey, bodyName.ToUpper(), characterUnlockableDef);
+                Modules.Prefabs.RegisterNewSurvivor(bodyPrefab, displayPrefab, Color.grey, bodyName.ToUpper(), characterUnlockableDef, 101f);
 
                 InitializeHitboxes();
                 InitializeSkills();

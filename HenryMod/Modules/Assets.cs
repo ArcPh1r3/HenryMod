@@ -6,6 +6,8 @@ using RoR2;
 using System.IO;
 using System.Collections.Generic;
 using RoR2.UI;
+using UnityEngine.Rendering.PostProcessing;
+using RoR2.Projectile;
 
 namespace HenryMod.Modules
 {
@@ -27,6 +29,9 @@ namespace HenryMod.Modules
         internal static GameObject bazookaExplosionEffect;
         internal static GameObject bazookaMuzzleFlash;
         internal static GameObject dustEffect;
+
+        internal static GameObject frenzyChargeEffect;
+        internal static GameObject frenzyShockwaveEffect;
 
         internal static GameObject muzzleFlashEnergy;
         internal static GameObject swordChargeEffect;
@@ -56,6 +61,29 @@ namespace HenryMod.Modules
         internal static NetworkSoundEventDef swordHitSoundEvent;
         internal static NetworkSoundEventDef punchHitSoundEvent;
         internal static NetworkSoundEventDef nemSwordHitSoundEvent;
+
+        #region Materials
+        // vfx materials
+        internal static Material supplyDropMat;
+        internal static Material airStrikeMat;
+        internal static Material crippleSphereMat;
+        internal static Material areaIndicatorMat;
+        internal static Material matMeteorIndicator;
+
+        internal static Material matBlueLightningLong;
+        internal static Material matYellowLightningLong;
+        internal static Material matJellyfishLightning;
+        internal static Material matJellyfishLightningLarge;
+        internal static Material matMageMatrixDirectionalLightning;
+        internal static Material matDistortion;
+        internal static Material matMercSwipe;
+        internal static Material matLoaderLightningSphere;
+        internal static Material matHuntressSwingTrail;
+        #endregion
+
+        #region PostProcessing
+        internal static PostProcessProfile grandParentPP;
+        #endregion
 
         // lists of assets to add to contentpack
         internal static List<NetworkSoundEventDef> networkSoundEventDefs = new List<NetworkSoundEventDef>();
@@ -96,6 +124,25 @@ namespace HenryMod.Modules
             }
         }
 
+        private static void GatherMaterials()
+        {
+            grandParentPP = Resources.Load<GameObject>("Prefabs/CharacterBodies/GrandParentBody").GetComponentInChildren<PostProcessVolume>().sharedProfile;
+            supplyDropMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/NetworkedObjects/CaptainSupplyDrops/CaptainSupplyDrop, Healing").transform.Find("Inactive").Find("Sphere, Outer").GetComponent<MeshRenderer>().material);
+            airStrikeMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/ProjectileGhosts/CaptainAirstrikeGhost1").transform.Find("Expander").Find("Sphere, Outer").GetComponent<MeshRenderer>().material);
+            crippleSphereMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/TemporaryVisualEffects/CrippleEffect").transform.Find("Visual").GetChild(1).GetComponent<MeshRenderer>().material);
+            areaIndicatorMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Effects/SpiteBombDelayEffect").transform.Find("Nova Sphere").GetComponent<ParticleSystemRenderer>().material);
+            matBlueLightningLong = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Effects/OrbEffects/LightningStrikeOrbEffect").transform.Find("Ring").GetComponent<ParticleSystemRenderer>().material);
+            matJellyfishLightning = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Effects/JellyfishNova").transform.Find("Lightning, Spark Center").GetComponent<ParticleSystemRenderer>().material);
+            matJellyfishLightningLarge = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Effects/ImpactEffects/VagrantCannonExplosion").transform.Find("Lightning, Radial").GetComponent<ParticleSystemRenderer>().material);
+            matMageMatrixDirectionalLightning = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Effects/OmniEffect/OmniImpactVFXLightningMage").transform.Find("Matrix, Directional").GetComponent<ParticleSystemRenderer>().material);
+            matDistortion = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Effects/ImpactEffects/LoaderGroundSlam").transform.Find("Sphere, Distortion").GetComponent<ParticleSystemRenderer>().material);
+            matMercSwipe = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Projectiles/EvisProjectile").GetComponent<ProjectileController>().ghostPrefab.transform.Find("Base").GetComponent<ParticleSystemRenderer>().material);
+            matLoaderLightningSphere = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Effects/ImpactEffects/LoaderGroundSlam").transform.Find("Sphere, Expanding").GetComponent<ParticleSystemRenderer>().material);
+            matYellowLightningLong = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Projectiles/LoaderPylon").transform.Find("loader pylon").Find("LoaderPylonArmature").Find("ROOT").Find("ActiveParticles").Find("Sparks, Trail").GetComponent<ParticleSystemRenderer>().trailMaterial);
+            matMeteorIndicator = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Effects/MeteorStrikePredictionEffect").transform.Find("GroundSlamIndicator").GetComponent<MeshRenderer>().material);
+            matHuntressSwingTrail = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/Effects/HuntressGlaiveSwing").GetComponentInChildren<ParticleSystemRenderer>().material);
+        }
+
         internal static void PopulateAssets()
         {
             if (!mainAssetBundle)
@@ -104,14 +151,19 @@ namespace HenryMod.Modules
                 return;
             }
 
+            GatherMaterials();
+
             swordHitSoundEvent = CreateNetworkSoundEventDef("HenrySwordHit");
             punchHitSoundEvent = CreateNetworkSoundEventDef("HenryPunchHit");
             nemSwordHitSoundEvent = CreateNetworkSoundEventDef("NemrySwordHit");
 
-            dustEffect = LoadEffect("HenryDustEffect");
+            dustEffect = LoadEffect("HenryDustEffect", false);
             bombExplosionEffect = LoadEffect("BombExplosionEffect", "HenryBombExplosion");
             bazookaExplosionEffect = LoadEffect("HenryBazookaExplosionEffect", "HenryBazookaExplosion");
-            bazookaMuzzleFlash = LoadEffect("HenryBazookaMuzzleFlash");
+            bazookaMuzzleFlash = LoadEffect("HenryBazookaMuzzleFlash", false);
+
+            frenzyChargeEffect = LoadEffect("FrenzyChargeEffect", true);
+            frenzyShockwaveEffect = LoadEffect("FrenzyShockwaveEffect");
 
             muzzleFlashEnergy = LoadEffect("NemryMuzzleFlashEnergy", true);
             minibossEffect = mainAssetBundle.LoadAsset<GameObject>("NemryMinibossIndicator");
@@ -155,10 +207,15 @@ namespace HenryMod.Modules
             }
 
             swordSwingEffect = Assets.LoadEffect("HenrySwordSwingEffect", true);
+            swordSwingEffect.transform.Find("SwingTrail").GetComponent<ParticleSystemRenderer>().material = matHuntressSwingTrail;
+            swordSwingEffect.transform.Find("SwingTrail").Find("SwingTrail2").GetComponent<ParticleSystemRenderer>().material = matDistortion;
+
             swordHitImpactEffect = Assets.LoadEffect("ImpactHenrySlash");
+            AddSimpleShakeEmitter(swordHitImpactEffect);
 
             punchSwingEffect = Assets.LoadEffect("HenryFistSwingEffect", true);
             punchImpactEffect = Assets.LoadEffect("ImpactHenryPunch");
+            AddSimpleShakeEmitter(punchImpactEffect);
 
             fistBarrageEffect = Assets.LoadEffect("FistBarrageEffect", true);
             if (fistBarrageEffect) fistBarrageEffect.GetComponent<ParticleSystemRenderer>().material.shader = hotpoo;
@@ -214,6 +271,7 @@ namespace HenryMod.Modules
             nemSwordStabSwingEffect = Assets.LoadEffect("NemrySwordStabSwingEffect", true);
             nemSwordHeavySwingEffect = Assets.LoadEffect("NemryHeavySwordSwingEffect", true);
             nemSwordHitImpactEffect = Assets.LoadEffect("ImpactNemrySlash");
+            AddSimpleShakeEmitter(nemSwordHitImpactEffect);
 
             energyBurstEffect = LoadEffect("EnergyBurstEffect");
             smallEnergyBurstEffect = LoadEffect("EnergySmallBurstEffect");
@@ -227,6 +285,22 @@ namespace HenryMod.Modules
             // this did not work.
             //tracerMat.SetColor("_TintColor", new Color(78f / 255f, 80f / 255f, 111f / 255f));
             line.material = tracerMat;
+        }
+
+        private static void AddSimpleShakeEmitter(GameObject effectPrefab)
+        {
+            ShakeEmitter shakeEmitter = effectPrefab.AddComponent<ShakeEmitter>();
+            shakeEmitter.amplitudeTimeDecay = true;
+            shakeEmitter.duration = 0.15f;
+            shakeEmitter.radius = 72f;
+            shakeEmitter.scaleShakeRadiusWithLocalScale = true;
+
+            shakeEmitter.wave = new Wave
+            {
+                amplitude = 0.2f,
+                frequency = 60f,
+                cycleOffset = 0f
+            };
         }
 
         private static GameObject CreateTracer(string originalTracerName, string newTracerName)

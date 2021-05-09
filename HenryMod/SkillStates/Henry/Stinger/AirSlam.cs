@@ -1,4 +1,5 @@
 ﻿using EntityStates;
+using HenryMod.Modules.Components;
 using HenryMod.SkillStates.BaseStates;
 using RoR2;
 using UnityEngine;
@@ -7,15 +8,19 @@ namespace HenryMod.SkillStates.Stinger
 {
     public class AirSlam : BaseMeleeAttack
     {
+        private HenryFuryComponent furyComponent;
+
         public override void OnEnter()
         {
+            this.furyComponent = base.gameObject.GetComponent<HenryFuryComponent>();
+
             this.hitboxName = "Punch";
 
             this.damageType = DamageType.BypassArmor;
             this.damageCoefficient = 6f;
             this.procCoefficient = 1f;
             this.pushForce = 200f;
-            this.bonusForce = Vector3.up * -3200f;
+            this.bonusForce = Vector3.up * -4800f;
             this.baseDuration = 1f;
             this.attackStartTime = 0.25f;
             this.attackEndTime = 0.4f;
@@ -57,6 +62,8 @@ namespace HenryMod.SkillStates.Stinger
         protected override void OnHitEnemyAuthority()
         {
             base.OnHitEnemyAuthority();
+
+            if (this.furyComponent) this.furyComponent.AddFury(3f);
         }
 
         protected override void SetNextState()

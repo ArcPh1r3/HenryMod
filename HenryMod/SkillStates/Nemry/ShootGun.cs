@@ -8,13 +8,13 @@ namespace HenryMod.SkillStates.Nemry
     public class ShootGun : BaseNemrySkillState
     {
         public static float damageCoefficient = 0.9f;
-        public static float boostedDamageCoefficient = 2.5f;
+        public static float boostedDamageCoefficient = 3.5f;
         public static float procCoefficient = 1f;
         public static float baseDuration = 0.6f;
         public static float force = 200f;
         public static float recoil = 1.5f;
         public static float range = 256f;
-        public static float energyCost = 5f;
+        public static float energyCost = 2.5f;
         public static GameObject tracerEffectPrefab = Resources.Load<GameObject>("Prefabs/Effects/Tracers/TracerEngiTurret");
 
         private float duration;
@@ -55,7 +55,7 @@ namespace HenryMod.SkillStates.Nemry
                 EffectManager.SimpleMuzzleFlash(Modules.Assets.muzzleFlashEnergy, base.gameObject, this.muzzleString, false);
 
                 string soundString = "NemryShootGun";
-                if (this.isBoosted) soundString = "NemryShootEnergy";
+                if (this.isBoosted) soundString = "NemryShootEnergyAlt";
                 Util.PlaySound(soundString, base.gameObject);
 
                 if (base.isAuthority)

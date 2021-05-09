@@ -10,28 +10,16 @@ namespace HenryMod.Modules
     {
         // armor buff gained during roll
         internal static BuffDef armorBuff;
+        internal static BuffDef frenzyBuff;
+        internal static BuffDef frenzyScepterBuff;
 
         internal static List<BuffDef> buffDefs = new List<BuffDef>();
 
         internal static void RegisterBuffs()
         {
-            // fix the buff catalog to actually register our buffs
-            IL.RoR2.BuffCatalog.Init += FixBuffCatalog;
-
             armorBuff = AddNewBuff("HenryArmorBuff", Resources.Load<Sprite>("Textures/BuffIcons/texBuffGenericShield"), Color.white, false, false);
-        }
-
-        internal static void FixBuffCatalog(ILContext il)
-        {
-            ILCursor c = new ILCursor(il);
-
-            if (!c.Next.MatchLdsfld(typeof(RoR2Content.Buffs), nameof(RoR2Content.Buffs.buffDefs)))
-            {
-                return;
-            }
-
-            c.Remove();
-            c.Emit(OpCodes.Ldsfld, typeof(ContentManager).GetField(nameof(ContentManager.buffDefs)));
+            frenzyBuff = AddNewBuff("HenryFrenzyBuff", Resources.Load<Sprite>("Textures/BuffIcons/texBuffBanditSkullIcon"), Color.red, false, false);
+            frenzyScepterBuff = AddNewBuff("HenryFrenzyScepterBuff", Resources.Load<Sprite>("Textures/BuffIcons/texBuffBanditSkullIcon"), Color.yellow, false, false);
         }
 
         // simple helper method

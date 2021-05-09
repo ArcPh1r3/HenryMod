@@ -40,7 +40,7 @@ namespace HenryMod.SkillStates.Nemry.ChargeSlash
                 }
             }
 
-            this.SpendEnergy(25f, SkillSlot.Secondary);
+            this.SpendEnergy(10f, SkillSlot.Secondary);
 
             this.chargePlayID = Util.PlayAttackSpeedSound("NemmandoDecisiveStrikeCharge", base.gameObject, this.attackSpeedStat);
             base.PlayAnimation("FullBody, Override", "Charge", "Charge.playbackRate", this.chargeDuration);

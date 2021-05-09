@@ -1,8 +1,10 @@
 ﻿using BepInEx;
 using R2API.Utils;
 using RoR2;
+using RoR2.ContentManagement;
 using System.Security;
 using System.Security.Permissions;
+using UnityEngine;
 
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
@@ -23,12 +25,9 @@ namespace HenryMod
 
     public class HenryPlugin : BaseUnityPlugin
     {
-        // if you don't change these you're giving permission to deprecate the mod-
-        //  please change the names to your own stuff, thanks
-        //   this shouldn't even have to be said
         public const string MODUID = "com.rob.HenryMod";
         public const string MODNAME = "HenryMod";
-        public const string MODVERSION = "1.2.4";
+        public const string MODVERSION = "2.0.0";
 
         // a prefix for name tokens to prevent conflicts
         public const string developerPrefix = "ROB";
@@ -39,6 +38,10 @@ namespace HenryMod
 
         public static HenryPlugin instance;
 
+        internal static CharacterCameraParams defaultCameraParams;
+        internal static CharacterCameraParams zoomInCameraParams;
+        internal static CharacterCameraParams emoteCameraParams;
+
         private void Awake()
         {
             instance = this;
@@ -46,6 +49,11 @@ namespace HenryMod
             // check for soft dependencies
             if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.TeamMoonstorm.Starstorm2")) starstormInstalled = true;
             if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter")) scepterInstalled = true;
+
+            // create camera params
+            defaultCameraParams = NewCameraParams("ccpHenryDefault", 70f, 1.37f, new Vector3(0f, 0f, -10f));
+            zoomInCameraParams = NewCameraParams("ccpHenryZoomIn", 70f, 1.37f, new Vector3(0f, -1f, -5.5f));
+            emoteCameraParams = NewCameraParams("ccpHenryEmote", 70f, 1.37f, new Vector3(0f, -1.4f, -6f));
 
             // load assets and read config
             Modules.Assets.Initialize();
@@ -62,16 +70,36 @@ namespace HenryMod
 
             // nemry leak? if you're reading this keep quiet about it please.
             // use it as an example for your own nemesis if you want i suppose
-            //new Modules.Enemies.Nemry().CreateCharacter();
+            new Modules.Enemies.Nemry().CreateCharacter();
 
-            new Modules.ContentPacks().CreateContentPack();
+            new Modules.ContentPacks().Initialize();
 
             Hook();
+
+            RoR2.ContentManagement.ContentManager.onContentPacksAssigned += LateSetup;
         }
 
-        private void Start()
+        private void LateSetup(global::HG.ReadOnlyArray<ReadOnlyContentPack> obj)
         {
             Modules.Survivors.Henry.instance.SetItemDisplays();
+        }
+
+        private static CharacterCameraParams NewCameraParams(string name, float pitch, float pivotVerticalOffset, Vector3 standardPosition)
+        {
+            return NewCameraParams(name, pitch, pivotVerticalOffset, standardPosition, 0.1f);
+        }
+
+        private static CharacterCameraParams NewCameraParams(string name, float pitch, float pivotVerticalOffset, Vector3 standardPosition, float wallCushion)
+        {
+            CharacterCameraParams newParams = ScriptableObject.CreateInstance<CharacterCameraParams>();
+
+            newParams.maxPitch = pitch;
+            newParams.minPitch = -pitch;
+            newParams.pivotVerticalOffset = pivotVerticalOffset;
+            newParams.standardLocalCameraPos = standardPosition;
+            newParams.wallCushion = wallCushion;
+
+            return newParams;
         }
 
         private void Hook()
@@ -90,6 +118,21 @@ namespace HenryMod
                 if (self.HasBuff(Modules.Buffs.armorBuff))
                 {
                     self.armor += 300f;
+                }
+
+                if (self.HasBuff(Modules.Buffs.frenzyBuff))
+                {
+                    self.attackSpeed += 5f;
+                    self.moveSpeed += 5f;
+                    self.regen += 8f;
+                }
+
+                if (self.HasBuff(Modules.Buffs.frenzyScepterBuff))
+                {
+                    self.attackSpeed += 6f;
+                    self.moveSpeed += 8f;
+                    self.regen += 12f;
+                    self.armor += 100f;
                 }
             }
         }

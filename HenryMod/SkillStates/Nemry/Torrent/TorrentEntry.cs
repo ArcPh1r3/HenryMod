@@ -11,7 +11,7 @@ namespace HenryMod.SkillStates.Nemry.Torrent
         {
             base.OnEnter();
 
-            this.SpendEnergy(10);
+            this.SpendEnergy(5);
 
             if (this.isGrounded)
             {

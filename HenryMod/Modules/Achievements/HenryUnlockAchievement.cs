@@ -36,8 +36,6 @@ namespace HenryMod.Modules.Achievements
                 }
             }
 
-            Debug.Log("haha fuyck hopooo!!");
-
             orig(self);
         }
 

@@ -1,4 +1,5 @@
-﻿using HenryMod.SkillStates.BaseStates;
+﻿using HenryMod.Modules.Components;
+using HenryMod.SkillStates.BaseStates;
 using RoR2;
 using UnityEngine;
 
@@ -6,8 +7,12 @@ namespace HenryMod.SkillStates
 {
     public class FistBarrage : BaseMeleeAttack
     {
+        private HenryFuryComponent furyComponent;
+
         public override void OnEnter()
         {
+            this.furyComponent = base.gameObject.GetComponent<HenryFuryComponent>();
+
             this.hitboxName = "Punch";
 
             this.damageType = DamageType.BypassArmor;
@@ -56,6 +61,8 @@ namespace HenryMod.SkillStates
         protected override void OnHitEnemyAuthority()
         {
             base.OnHitEnemyAuthority();
+
+            if (this.furyComponent) this.furyComponent.AddFury();
         }
 
         protected override void SetNextState()

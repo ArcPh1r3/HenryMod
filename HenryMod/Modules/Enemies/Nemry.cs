@@ -11,6 +11,7 @@ using RoR2.Skills;
 using RoR2.UI;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -72,7 +73,7 @@ namespace HenryMod.Modules.Enemies
 
                 displayPrefab = Modules.Prefabs.CreateDisplayPrefab("NemryDisplay", characterPrefab);
 
-                Modules.Prefabs.RegisterNewSurvivor(characterPrefab, displayPrefab, Color.green, "NEMRY", 101f);
+                Modules.Prefabs.RegisterNewSurvivor(characterPrefab, displayPrefab, Color.green, "NEMRY", 101.1f);
 
                 umbraMaster = CreateMaster(characterPrefab, "NemryMonsterMaster");
                 #endregion
@@ -92,6 +93,7 @@ namespace HenryMod.Modules.Enemies
                 GameObject bossIndicator = GameObject.Instantiate(Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("NemryMinibossIndicator"));
                 bossIndicator.transform.parent = invasionBossPrefab.GetComponentInChildren<ChildLocator>().FindChild("Chest");
                 bossIndicator.transform.localPosition = Vector3.zero;
+                bossIndicator.transform.localScale *= 3f;
 
                 invasionBossMaster = CreateMaster(invasionBossPrefab, "NemryInvasionMaster");
                 #endregion
@@ -99,11 +101,11 @@ namespace HenryMod.Modules.Enemies
                 On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamage;
                 On.RoR2.MapZone.TryZoneStart += MapZone_TryZoneStart;
                 On.RoR2.HealthComponent.Suicide += HealthComponent_Suicide;
-                On.RoR2.CharacterSelectBarController.Start += CharacterSelectBarController_Start;
+                On.RoR2.PreGameController.Awake += PreGameController_Awake;
 
                 if (HenryPlugin.starstormInstalled)
                 {
-                    //AddNemesisToSpawnPool();
+                    AddNemesisToSpawnPool();
                 }
 
                 //Add actions to RoR2.InputCatalog
@@ -153,6 +155,17 @@ namespace HenryMod.Modules.Enemies
                 subtitleNameToken = HenryPlugin.developerPrefix + "_NEMRY_BODY_SUBTITLE",
                 podPrefab = null
             });
+
+            if (!isPlayer)
+            {
+                CharacterBody body = newBody.GetComponent<CharacterBody>();
+                body.baseMaxHealth = 2800f;
+                body.levelMaxHealth = 840f;
+                body.baseRegen = 0f;
+                body.levelRegen = 0f;
+                body.baseDamage = 4f;
+            }
+
             newBody.AddComponent<Modules.Components.HenryTracker>();
             newBody.AddComponent<Modules.Components.NemryEnergyComponent>();
 
@@ -195,15 +208,16 @@ namespace HenryMod.Modules.Enemies
             return newBody;
         }
 
-        /*[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private static void AddNemesisToSpawnPool()
         {
             Starstorm2.Cores.VoidCore.nemesisSpawns.Add(new Starstorm2.Cores.VoidCore.NemesisSpawnData
             {
                 masterPrefab = invasionBossMaster,
-                itemDrop = ItemIndex.Incubator
+                itemDrop = RoR2Content.Items.ShinyPearl,
+                musicString = "NemryBossTheme"
             });
-        }*/
+        }
 
         private static GameObject CreateMaster(GameObject bodyPrefab, string masterName)
         {
@@ -439,7 +453,7 @@ namespace HenryMod.Modules.Enemies
                 isCombatSkill = true,
                 mustKeyPress = false,
                 cancelSprintingOnActivation = true,
-                rechargeStock = 25,
+                rechargeStock = 10,
                 requiredStock = 1,
                 stockToConsume = 0
             });
@@ -487,12 +501,12 @@ namespace HenryMod.Modules.Enemies
                 isCombatSkill = true,
                 mustKeyPress = false,
                 cancelSprintingOnActivation = true,
-                rechargeStock = 10,
+                rechargeStock = 5,
                 requiredStock = 1,
                 stockToConsume = 0
             });
 
-            Modules.Skills.AddSecondarySkills(prefab, chargeSkillDefCSS, blastSkillDef);
+            Modules.Skills.AddSecondarySkill(prefab, chargeSkillDefCSS);
             #endregion
 
             #region Utility
@@ -539,7 +553,7 @@ namespace HenryMod.Modules.Enemies
                 isCombatSkill = false,
                 mustKeyPress = true,
                 cancelSprintingOnActivation = false,
-                rechargeStock = 10,
+                rechargeStock = 5,
                 requiredStock = 1,
                 stockToConsume = 1
             });
@@ -587,7 +601,7 @@ namespace HenryMod.Modules.Enemies
                 isCombatSkill = false,
                 mustKeyPress = true,
                 cancelSprintingOnActivation = false,
-                rechargeStock = 20,
+                rechargeStock = 15,
                 requiredStock = 1,
                 stockToConsume = 1
             });
@@ -650,7 +664,7 @@ namespace HenryMod.Modules.Enemies
                 skillNameToken = prefix + "_NEMRY_BODY_SPECIAL_BEAM_NAME",
                 skillDescriptionToken = prefix + "_NEMRY_BODY_SPECIAL_BEAM_DESCRIPTION",
                 skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texNemBeamIcon"),
-                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Nemry.Beam.ChargeBeam)),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Nemry.Beam.FireBeamBarrage)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
                 baseRechargeInterval = 0f,
@@ -3452,17 +3466,16 @@ localScale = new Vector3(0.1233F, 0.1233F, 0.1233F),
             }
         }
 
-        private void CharacterSelectBarController_Start(On.RoR2.CharacterSelectBarController.orig_Start orig, CharacterSelectBarController self)
+        private void PreGameController_Awake(On.RoR2.PreGameController.orig_Awake orig, PreGameController self)
         {
-            string bodyName = characterPrefab.GetComponent<CharacterBody>().baseNameToken;
-            bool unlocked = SurvivorCatalog.SurvivorIsUnlockedOnThisClient(SurvivorCatalog.FindSurvivorIndex(bodyName));
+            bool unlocked = LocalUserManager.readOnlyLocalUsersList.Any((LocalUser localUser) => localUser.userProfile.HasUnlockable(characterUnlockableDef));
             if (unlocked)
             {
-                SurvivorCatalog.FindSurvivorDefFromBody(characterPrefab).hidden = true;
+                SurvivorCatalog.FindSurvivorDefFromBody(characterPrefab).hidden = false;
             }
             else
             {
-                SurvivorCatalog.FindSurvivorDefFromBody(characterPrefab).hidden = false;
+                SurvivorCatalog.FindSurvivorDefFromBody(characterPrefab).hidden = true;
             }
 
             orig(self);

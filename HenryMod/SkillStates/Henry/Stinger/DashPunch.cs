@@ -19,6 +19,7 @@ namespace HenryMod.SkillStates.Stinger
         public static NetworkSoundEventDef impactSound = Modules.Assets.punchHitSoundEvent;
 
         private HenryTracker tracker;
+        private HenryFuryComponent furyComponent;
         private HurtBox target;
         private bool targetIsValid;
         private OverlapAttack attack;
@@ -28,6 +29,7 @@ namespace HenryMod.SkillStates.Stinger
             base.OnEnter();
             this.tracker = base.GetComponent<HenryTracker>();
             this.target = this.tracker.GetTrackingTarget();
+            this.furyComponent = base.gameObject.GetComponent<HenryFuryComponent>();
 
             if (base.characterBody) base.characterBody.bodyFlags |= CharacterBody.BodyFlags.IgnoreFallDamage;
             if (base.isGrounded) base.SmallHop(base.characterMotor, 10f);
@@ -94,6 +96,8 @@ namespace HenryMod.SkillStates.Stinger
 
                 if (this.attack.Fire())
                 {
+                    if (this.furyComponent) this.furyComponent.AddFury();
+
                     this.outer.SetNextState(new StingerExit());
                     return;
                 }

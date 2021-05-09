@@ -7,22 +7,35 @@ namespace HenryMod.SkillStates
 {
     public class Roll : BaseSkillState
     {
-        public static float duration = 0.5f;
+        public static float baseDuration = 0.5f;
         public static float initialSpeedCoefficient = 5f;
         public static float finalSpeedCoefficient = 2.5f;
 
-        public static string dodgeSoundString = "HenryRoll";
         public static float dodgeFOV = EntityStates.Commando.DodgeState.dodgeFOV;
 
+        private float duration;
+        private bool hasFrenzy;
+        private Transform modelTransform;
         private float rollSpeed;
         private Vector3 forwardDirection;
         private Animator animator;
         private Vector3 previousPosition;
+        private CharacterModel characterModel;
+        private HurtBoxGroup hurtboxGroup;
 
         public override void OnEnter()
         {
             base.OnEnter();
             this.animator = base.GetModelAnimator();
+            this.modelTransform = base.GetModelTransform();
+            this.hasFrenzy = base.characterBody.HasBuff(Modules.Buffs.frenzyBuff) || base.characterBody.HasBuff(Modules.Buffs.frenzyScepterBuff);
+            this.duration = Roll.baseDuration;
+
+            if (this.modelTransform)
+            {
+                this.characterModel = this.modelTransform.GetComponent<CharacterModel>();
+                this.hurtboxGroup = this.modelTransform.GetComponent<HurtBoxGroup>();
+            }
 
             if (base.isAuthority && base.inputBank && base.characterDirection)
             {
@@ -46,19 +59,69 @@ namespace HenryMod.SkillStates
             Vector3 b = base.characterMotor ? base.characterMotor.velocity : Vector3.zero;
             this.previousPosition = base.transform.position - b;
 
-            base.PlayAnimation("FullBody, Override", "Roll", "Roll.playbackRate", Roll.duration);
-            Util.PlaySound(Roll.dodgeSoundString, base.gameObject);
-
             if (NetworkServer.active)
             {
-                base.characterBody.AddTimedBuff(Modules.Buffs.armorBuff, 3f * Roll.duration);
-                base.characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, 0.5f * Roll.duration);
+                base.characterBody.AddTimedBuff(Modules.Buffs.armorBuff, 3f * Roll.baseDuration);
+                base.characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, 0.5f * Roll.baseDuration);
             }
+
+            string soundString = "HenryRoll";
+            if (this.hasFrenzy)
+            {
+                soundString = "NemryBlink";
+                this.HideModel();
+                this.CreateBlinkEffect(Util.GetCorePosition(base.gameObject));
+                this.duration = 0.25f;
+            }
+            else base.PlayAnimation("FullBody, Override", "Roll", "Roll.playbackRate", this.duration);
+
+            Util.PlaySound(soundString, base.gameObject);
+        }
+
+        private void HideModel()
+        {
+            if (this.characterModel)
+            {
+                this.characterModel.invisibilityCount++;
+            }
+
+            if (this.hurtboxGroup)
+            {
+                HurtBoxGroup hurtBoxGroup = this.hurtboxGroup;
+                int hurtBoxesDeactivatorCounter = hurtBoxGroup.hurtBoxesDeactivatorCounter + 1;
+                hurtBoxGroup.hurtBoxesDeactivatorCounter = hurtBoxesDeactivatorCounter;
+            }
+        }
+
+        private void ShowModel()
+        {
+            base.characterMotor.velocity *= 0.1f;
+            this.CreateBlinkEffect(Util.GetCorePosition(base.gameObject));
+
+            if (this.characterModel)
+            {
+                this.characterModel.invisibilityCount--;
+            }
+
+            if (this.hurtboxGroup)
+            {
+                HurtBoxGroup hurtBoxGroup = this.hurtboxGroup;
+                int hurtBoxesDeactivatorCounter = hurtBoxGroup.hurtBoxesDeactivatorCounter - 1;
+                hurtBoxGroup.hurtBoxesDeactivatorCounter = hurtBoxesDeactivatorCounter;
+            }
+        }
+
+        private void CreateBlinkEffect(Vector3 origin)
+        {
+            EffectData effectData = new EffectData();
+            effectData.rotation = Quaternion.identity;
+            effectData.origin = origin;
+            EffectManager.SpawnEffect(EntityStates.Huntress.BlinkState.blinkPrefab, effectData, false);
         }
 
         private void RecalculateRollSpeed()
         {
-            this.rollSpeed = this.moveSpeedStat * Mathf.Lerp(Roll.initialSpeedCoefficient, Roll.finalSpeedCoefficient, base.fixedAge / Roll.duration);
+            this.rollSpeed = this.moveSpeedStat * Mathf.Lerp(Roll.initialSpeedCoefficient, Roll.finalSpeedCoefficient, base.fixedAge / Roll.baseDuration);
         }
 
         public override void FixedUpdate()
@@ -67,7 +130,7 @@ namespace HenryMod.SkillStates
             this.RecalculateRollSpeed();
 
             if (base.characterDirection) base.characterDirection.forward = this.forwardDirection;
-            if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = Mathf.Lerp(Roll.dodgeFOV, 60f, base.fixedAge / Roll.duration);
+            if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = Mathf.Lerp(Roll.dodgeFOV, 60f, base.fixedAge / this.duration);
 
             Vector3 normalized = (base.transform.position - this.previousPosition).normalized;
             if (base.characterMotor && base.characterDirection && normalized != Vector3.zero)
@@ -81,7 +144,7 @@ namespace HenryMod.SkillStates
             }
             this.previousPosition = base.transform.position;
 
-            if (base.isAuthority && base.fixedAge >= Roll.duration)
+            if (base.isAuthority && base.fixedAge >= this.duration)
             {
                 this.outer.SetNextStateToMain();
                 return;
@@ -92,6 +155,8 @@ namespace HenryMod.SkillStates
         {
             if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;
             base.OnExit();
+
+            if (this.hasFrenzy) this.ShowModel();
 
             base.characterMotor.disableAirControlUntilCollision = false;
         }

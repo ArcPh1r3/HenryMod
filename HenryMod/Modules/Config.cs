@@ -5,11 +5,14 @@ namespace HenryMod.Modules
 {
     public static class Config
     {
+        public static ConfigEntry<bool> rampageEffects;
+
         public static ConfigEntry<KeyCode> restKeybind;
         public static ConfigEntry<KeyCode> danceKeybind;
 
         public static void ReadConfig()
         {
+            rampageEffects = HenryPlugin.instance.Config.Bind<bool>(new ConfigDefinition("Visuals", "Rampage VFX"), true, new ConfigDescription("Enable Rampage visual effects"));
             restKeybind = HenryPlugin.instance.Config.Bind<KeyCode>(new ConfigDefinition("Keybinds", "Rest"), KeyCode.Alpha1, new ConfigDescription("Keybind used to perform the Rest emote"));
             danceKeybind = HenryPlugin.instance.Config.Bind<KeyCode>(new ConfigDefinition("Keybinds", "Dance"), KeyCode.Alpha3, new ConfigDescription("Keybind used to perform the Dance emote"));
         }

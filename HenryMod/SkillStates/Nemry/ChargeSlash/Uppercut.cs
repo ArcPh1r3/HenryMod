@@ -32,7 +32,7 @@ namespace HenryMod.SkillStates.Nemry.ChargeSlash
             this.swingSoundString = "NemrySwordSwing";
             this.hitSoundString = "";
             this.muzzleString = "SwingUp";
-            this.swingEffectPrefab = Modules.Assets.nemSwordHeavySwingEffect;
+            this.swingEffectPrefab = Modules.Assets.nemSwordSwingEffect;
             this.hitEffectPrefab = Modules.Assets.nemSwordHitImpactEffect;
 
             this.impactSound = Modules.Assets.nemSwordHitSoundEvent.index;

@@ -27,7 +27,7 @@ namespace HenryMod.Modules.Achievements
 
         public override BodyIndex LookUpRequiredBodyIndex()
         {
-            return BodyCatalog.FindBodyIndex(Modules.Survivors.Henry.instance.bodyName);
+            return BodyCatalog.FindBodyIndex(Modules.Survivors.Henry.instance.fullBodyName);
         }
 
         public void ClearCheck(Run run, RunReport runReport)
@@ -44,14 +44,12 @@ namespace HenryMod.Modules.Achievements
                     if (base.meetsBodyRequirement && base.isUserAlive)
                     {
                         Inventory userInventory = base.localUser.cachedMaster.inventory;
-                        if (userInventory.GetTotalItemCountOfTier(ItemTier.Boss) == 0
-                            && userInventory.GetTotalItemCountOfTier(ItemTier.Lunar) == 0
-                            && userInventory.GetTotalItemCountOfTier(ItemTier.Tier1) == 0
-                            && userInventory.GetTotalItemCountOfTier(ItemTier.Tier2) == 0
-                            && userInventory.GetTotalItemCountOfTier(ItemTier.Tier3) == 0)
-                        {
-                            base.Grant();
-                        }
+                        int itemCount = userInventory.GetTotalItemCountOfTier(ItemTier.Boss) + userInventory.GetTotalItemCountOfTier(ItemTier.Lunar) + userInventory.GetTotalItemCountOfTier(ItemTier.Tier1) + userInventory.GetTotalItemCountOfTier(ItemTier.Tier2) + userInventory.GetTotalItemCountOfTier(ItemTier.Tier3);
+                        DifficultyDef difficultyDef = DifficultyCatalog.GetDifficultyDef(runReport.ruleBook.FindDifficulty());
+
+                        if (difficultyDef == DifficultyCatalog.GetDifficultyDef(DifficultyIndex.Easy) || difficultyDef == DifficultyCatalog.GetDifficultyDef(DifficultyIndex.Hard)) itemCount--;
+
+                        if (itemCount <= 0) base.Grant();
                     }
                 }
             }

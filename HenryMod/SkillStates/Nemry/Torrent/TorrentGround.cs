@@ -58,11 +58,10 @@ namespace HenryMod.SkillStates.Nemry.Torrent
             base.characterBody.AddSpreadBloom(0.33f * TorrentGround.bulletRecoil);
 
             EffectManager.SimpleMuzzleFlash(EntityStates.Engi.EngiWeapon.FireGrenades.effectPrefab, base.gameObject, this.muzzleString, false);
-            Util.PlaySound("NemryShootEnergy", base.gameObject);
+            Util.PlaySound("NemryShootEnergyAlt", base.gameObject);
             base.PlayAnimation("FullBody, Override", "GroundTorrentLoop", "Torrent.playbackRate", this.fireInterval);
 
-            bool isAuthority = base.isAuthority;
-            if (isAuthority)
+            if (base.isAuthority)
             {
                 float damage = TorrentGround.damageCoefficient * this.damageStat;
                 Ray aimRay = base.GetAimRay();
@@ -114,7 +113,7 @@ namespace HenryMod.SkillStates.Nemry.Torrent
             {
                 this.spinningWeaponEffect.SetActive(false);
 
-                if (this.SpendEnergy(2))
+                if (this.SpendEnergy(1))
                 {
                     this.fireStopwatch = this.fireInterval;
                     this.FireBullet();
