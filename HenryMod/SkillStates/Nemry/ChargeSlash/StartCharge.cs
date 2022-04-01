@@ -65,7 +65,7 @@ namespace HenryMod.SkillStates.Nemry.ChargeSlash
             if (charge >= 0.6f && !this.zoomin)
             {
                 this.zoomin = true;
-                if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Aura;
+               // todo cum2 camera if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Aura;
             }
 
             if (charge >= 1f && !this.finishedCharge)
@@ -77,7 +77,7 @@ namespace HenryMod.SkillStates.Nemry.ChargeSlash
 
                 EffectManager.SimpleMuzzleFlash(Modules.Assets.swordChargeFinishEffect, base.gameObject, "Muzzle", false);
 
-                if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Aura;
+               // todo cum2 camera if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Aura;
             }
 
             if (base.isAuthority && base.inputBank.skill3.justPressed && base.skillLocator.utility.CanExecute())
@@ -110,7 +110,7 @@ namespace HenryMod.SkillStates.Nemry.ChargeSlash
 
             if (this.CalcCharge() > 0.75f) EffectManager.SimpleMuzzleFlash(Modules.Assets.smallEnergyBurstEffect, base.gameObject, "Muzzle", false);
 
-            if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Aura;
+           // todo cum2 camera if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Aura;
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()

@@ -121,7 +121,7 @@ namespace HenryMod.SkillStates.Nemry.Beam
         {
             base.OnExit();
 
-            if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Standard;
+           // todo cum2 camera if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Standard;
         }
 
         public override void FixedUpdate()

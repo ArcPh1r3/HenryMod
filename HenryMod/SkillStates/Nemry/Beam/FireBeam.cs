@@ -55,7 +55,7 @@ namespace HenryMod.SkillStates.Nemry.Beam
             if (this.beamEffectInstance) EntityState.Destroy(this.beamEffectInstance);
             base.characterBody.SetAimTimer(0.2f);
 
-            if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Standard;
+           // todo cum2 camera if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Standard;
 
             base.OnExit();
         }

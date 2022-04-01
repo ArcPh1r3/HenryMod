@@ -25,8 +25,9 @@ namespace HenryMod.SkillStates.Henry.Frenzy.Scepter
 
             if (NetworkServer.active) base.characterBody.AddTimedBuff(Modules.Buffs.frenzyScepterBuff, 15f);
 
-            base.cameraTargetParams.cameraParams = HenryPlugin.defaultCameraParams;
-            base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Aura;
+            //todo cum2 fix camera
+            //base.cameraTargetParams.cameraParams = HenryPlugin.defaultCameraParams;
+            //base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Aura;
 
             this.FireShockwave();
             base.PlayAnimation("FullBody, Override", "FrenzyExit", "Frenzy.playbackRate", this.duration);
@@ -57,7 +58,7 @@ namespace HenryMod.SkillStates.Henry.Frenzy.Scepter
                 blastAttack.baseDamage = 0f;
                 blastAttack.falloffModel = BlastAttack.FalloffModel.None;
                 blastAttack.damageColorIndex = DamageColorIndex.Item;
-                blastAttack.attackerFiltering = AttackerFiltering.NeverHit;
+                blastAttack.attackerFiltering = AttackerFiltering.NeverHitSelf;
                 blastAttack.Fire();
             }
 
@@ -79,7 +80,7 @@ namespace HenryMod.SkillStates.Henry.Frenzy.Scepter
         {
             base.OnExit();
 
-            base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Standard;
+            // todo cum2 camera base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Standard;
 
             Util.PlaySound("HenrySuperSand", base.gameObject);
 

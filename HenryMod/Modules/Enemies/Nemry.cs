@@ -211,12 +211,13 @@ namespace HenryMod.Modules.Enemies
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private static void AddNemesisToSpawnPool()
         {
-            Starstorm2.Cores.VoidCore.nemesisSpawns.Add(new Starstorm2.Cores.VoidCore.NemesisSpawnData
-            {
-                masterPrefab = invasionBossMaster,
-                itemDrop = RoR2Content.Items.ShinyPearl,
-                musicString = "NemryBossTheme"
-            });
+            //todo starstorm22
+            //Starstorm2.Cores.VoidCore.nemesisSpawns.Add(new Starstorm2.Cores.VoidCore.NemesisSpawnData
+            //{
+            //    masterPrefab = invasionBossMaster,
+            //    itemDrop = RoR2Content.Items.ShinyPearl,
+            //    musicString = "NemryBossTheme"
+            //});
         }
 
         private static GameObject CreateMaster(GameObject bodyPrefab, string masterName)
@@ -404,7 +405,7 @@ namespace HenryMod.Modules.Enemies
             string prefix = HenryPlugin.developerPrefix;
 
             #region Primary
-            Modules.Skills.AddPrimarySkill(prefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.Nemry.SlashCombo)), "Weapon", prefix + "_NEMRY_BODY_PRIMARY_SWORDCSS_NAME", prefix + "_NEMRY_BODY_PRIMARY_SWORDCSS_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texNemSwordIconPreview"), true));
+            Modules.Skills.AddPrimarySkills(prefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.Nemry.SlashCombo)), "Weapon", prefix + "_NEMRY_BODY_PRIMARY_SWORDCSS_NAME", prefix + "_NEMRY_BODY_PRIMARY_SWORDCSS_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texNemSwordIconPreview"), true));
             swordPrimaryDef = Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.Nemry.SlashCombo)), "Weapon", prefix + "_NEMRY_BODY_PRIMARY_SWORD_NAME", prefix + "_NEMRY_BODY_PRIMARY_SWORD_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texNemSwordIcon"), true);
             gunPrimaryDef = Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.Nemry.ShootGun)), "Weapon", prefix + "_NEMRY_BODY_PRIMARY_GUN_NAME", prefix + "_NEMRY_BODY_PRIMARY_GUN_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texNemGunIcon"), true);
             #endregion
@@ -434,7 +435,7 @@ namespace HenryMod.Modules.Enemies
                 stockToConsume = 1
             });
 
-            swordSecondaryDef = Modules.Skills.CreateEnergySkillDef(new SkillDefInfo
+            swordSecondaryDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_NEMRY_BODY_SECONDARY_CHARGE_NAME",
                 skillNameToken = prefix + "_NEMRY_BODY_SECONDARY_CHARGE_NAME",
@@ -456,7 +457,7 @@ namespace HenryMod.Modules.Enemies
                 rechargeStock = 10,
                 requiredStock = 1,
                 stockToConsume = 0
-            });
+            }) as NemryEnergySkillDef;
 
             SkillDef chargeSkillDefCSS = Modules.Skills.CreateEnergySkillDef(new SkillDefInfo
             {
@@ -506,7 +507,7 @@ namespace HenryMod.Modules.Enemies
                 stockToConsume = 0
             });
 
-            Modules.Skills.AddSecondarySkill(prefab, chargeSkillDefCSS);
+            Modules.Skills.AddSecondarySkills(prefab, chargeSkillDefCSS);
             #endregion
 
             #region Utility
@@ -606,7 +607,7 @@ namespace HenryMod.Modules.Enemies
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddUtilitySkill(prefab, blinkSkillDefCSS);
+            Modules.Skills.AddUtilitySkills(prefab, blinkSkillDefCSS);
             #endregion
 
             #region Special
@@ -682,7 +683,7 @@ namespace HenryMod.Modules.Enemies
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddSpecialSkill(prefab, stabSkillDefCSS);
+            Modules.Skills.AddSpecialSkills(prefab, stabSkillDefCSS);
             #endregion
         }
 
@@ -2331,7 +2332,7 @@ localScale = new Vector3(0.2845F, 0.2845F, 0.2845F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.CooldownOnCrit,
+                keyAsset = JunkContent.Items.CooldownOnCrit,
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2719,7 +2720,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Incubator,
+                keyAsset = JunkContent.Items.Incubator,
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]

@@ -78,7 +78,7 @@ namespace HenryMod.Modules
             bodyComponent.baseNameToken = bodyInfo.bodyNameToken;
             bodyComponent.subtitleNameToken = bodyInfo.subtitleNameToken;
             bodyComponent.portraitIcon = bodyInfo.characterPortrait;
-            bodyComponent.crosshairPrefab = bodyInfo.crosshair;
+            bodyComponent._defaultCrosshairPrefab = bodyInfo.crosshair;
 
             bodyComponent.bodyFlags = CharacterBody.BodyFlags.ImmuneToExecutes;
             bodyComponent.rootMotionInMainState = false;
@@ -259,11 +259,17 @@ namespace HenryMod.Modules
         private static void SetupCameraTargetParams(GameObject prefab)
         {
             CameraTargetParams cameraTargetParams = prefab.GetComponent<CameraTargetParams>();
-            cameraTargetParams.cameraParams = Resources.Load<GameObject>("Prefabs/CharacterBodies/MercBody").GetComponent<CameraTargetParams>().cameraParams;
+            cameraTargetParams.cameraParams = Resources.Load<GameObject>("Prefabs/CharacterBodies/CommandoBody").GetComponent<CameraTargetParams>().cameraParams;
+            cameraTargetParams.cameraParams.data.maxPitch = 70;
+            cameraTargetParams.cameraParams.data.minPitch = -70;
+            cameraTargetParams.cameraParams.data.pivotVerticalOffset = 1.37f;
+            cameraTargetParams.cameraParams.data.idealLocalCameraPos = new Vector3(0f, 0f, -10f);
+            cameraTargetParams.cameraParams.data.wallCushion = 0.1f;
+
             cameraTargetParams.cameraPivotTransform = prefab.transform.Find("ModelBase").Find("CameraPivot");
-            cameraTargetParams.aimMode = CameraTargetParams.AimType.Standard;
+            //cameraTargetParams.data.aimMode = CameraTargetParams.AimType.Standard;
             cameraTargetParams.recoil = Vector2.zero;
-            cameraTargetParams.idealLocalCameraPos = Vector3.zero;
+            //cameraTargetParams.currentCameraParamsData.idealLocalCameraPos = Vector3.zero;
             cameraTargetParams.dontRaycastToPivot = false;
         }
 

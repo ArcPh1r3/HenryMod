@@ -56,7 +56,7 @@ namespace HenryMod.SkillStates.Nemry
                 blastAttack.baseForce = Burst.blastForce;
                 blastAttack.teamIndex = TeamComponent.GetObjectTeam(blastAttack.attacker);
                 blastAttack.damageType = DamageType.Stun1s;
-                blastAttack.attackerFiltering = AttackerFiltering.NeverHit;
+                blastAttack.attackerFiltering = AttackerFiltering.NeverHitSelf;
                 BlastAttack.Result result = blastAttack.Fire();
 
                 EffectData effectData = new EffectData();

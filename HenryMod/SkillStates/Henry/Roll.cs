@@ -130,7 +130,7 @@ namespace HenryMod.SkillStates
             this.RecalculateRollSpeed();
 
             if (base.characterDirection) base.characterDirection.forward = this.forwardDirection;
-            if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = Mathf.Lerp(Roll.dodgeFOV, 60f, base.fixedAge / this.duration);
+           // todo cum2 camera if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = Mathf.Lerp(Roll.dodgeFOV, 60f, base.fixedAge / this.duration);
 
             Vector3 normalized = (base.transform.position - this.previousPosition).normalized;
             if (base.characterMotor && base.characterDirection && normalized != Vector3.zero)
@@ -153,7 +153,7 @@ namespace HenryMod.SkillStates
 
         public override void OnExit()
         {
-            if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;
+           // todo cum2 camera if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;
             base.OnExit();
 
             if (this.hasFrenzy) this.ShowModel();

@@ -30,8 +30,8 @@ namespace HenryMod.SkillStates.Nemry
             {
                 base.PlayAnimation("Gesture, Override", "GunMode", "WeaponSwap.playbackRate", this.duration);
                 Util.PlaySound("NemryEquipGun", base.gameObject);
-
-                base.characterBody.crosshairPrefab = Modules.Assets.LoadCrosshair("Standard");
+                // todo cum2 camera 
+                base.characterBody._defaultCrosshairPrefab = Modules.Assets.LoadCrosshair("Standard");
 
                 base.skillLocator.primary.SetSkillOverride(base.skillLocator.primary, WeaponSwap.gunPrimaryDef, GenericSkill.SkillOverridePriority.Contextual);
                 base.skillLocator.secondary.SetSkillOverride(base.skillLocator.secondary, WeaponSwap.gunSecondaryDef, GenericSkill.SkillOverridePriority.Contextual);
@@ -45,8 +45,8 @@ namespace HenryMod.SkillStates.Nemry
             {
                 base.PlayAnimation("Gesture, Override", "SwordMode", "WeaponSwap.playbackRate", this.duration);
                 Util.PlaySound("NemryEquipSword", base.gameObject);
-
-                base.characterBody.crosshairPrefab = Modules.Assets.LoadCrosshair("SimpleDot");
+                // todo cum2 camera 
+                base.characterBody._defaultCrosshairPrefab = Modules.Assets.LoadCrosshair("SimpleDot");
 
                 base.skillLocator.primary.UnsetSkillOverride(base.skillLocator.primary, WeaponSwap.gunPrimaryDef, GenericSkill.SkillOverridePriority.Contextual);
                 base.skillLocator.secondary.UnsetSkillOverride(base.skillLocator.secondary, WeaponSwap.gunSecondaryDef, GenericSkill.SkillOverridePriority.Contextual);

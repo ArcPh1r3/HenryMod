@@ -52,7 +52,8 @@ namespace HenryMod.SkillStates.Nemry
                 if (!this.initCamera)
                 {
                     this.initCamera = true;
-                    this.cameraController.SetPitchYawFromLookVector(-base.characterDirection.forward);
+                    //todo cum2 is this even working?
+                    ((RoR2.CameraModes.CameraModePlayerBasic.InstanceData)this.cameraController.cameraMode.camToRawInstanceData[this.cameraController]).SetPitchYawFromLookVector(-base.characterDirection.forward);
                 }
             }
 

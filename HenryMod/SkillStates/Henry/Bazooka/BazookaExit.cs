@@ -17,14 +17,21 @@ namespace HenryMod.SkillStates.Bazooka
         {
             base.OnEnter();
             this.duration = BazookaExit.baseDuration / this.attackSpeedStat;
-            this.henryController.hasBazookaReady = false;
+
+            base.henryController.hasBazookaReady = false;
+            base.characterBody.aimOriginTransform = henryController.origAimOrigin;
+            base.henryController.ExitBazookaCamera();
 
             if (NetworkServer.active) base.characterBody.RemoveBuff(RoR2Content.Buffs.Slow50);
 
             base.PlayAnimation("Bazooka, Override", "BazookaExit", "Bazooka.playbackRate", this.duration);
             Util.PlaySound("HenryBazookaUnequip", base.gameObject);
 
-            if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Standard;
+            // todo cum2 camera if (base.cameraTargetParams) {
+            //todo cum2 camera fix, requestaimtype literally only works with aura now
+            //base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Standard;
+            //}
+
         }
 
         public override void FixedUpdate()

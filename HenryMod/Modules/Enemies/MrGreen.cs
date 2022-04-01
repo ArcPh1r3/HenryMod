@@ -170,7 +170,7 @@ namespace HenryMod.Modules.Enemies
             {
                 spawnCard = characterSpawnCard,
                 selectionWeight = 1,
-                allowAmbushSpawn = true,
+                //allowAmbushSpawn = true,
                 preventOverhead = false,
                 minimumStageCompletions = minimumStageCount,
                 requiredUnlockable = "",
@@ -370,7 +370,7 @@ namespace HenryMod.Modules.Enemies
             string prefix = HenryPlugin.developerPrefix;
 
             #region Primary
-            Modules.Skills.AddPrimarySkill(prefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.PunchCombo)), "Body", prefix + "_MRGREEN_BODY_PRIMARY_PUNCH_NAME", prefix + "_MRGREEN_BODY_PRIMARY_PUNCH_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texBoxingGlovesIcon"), true));
+            Modules.Skills.AddPrimarySkills(prefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.PunchCombo)), "Body", prefix + "_MRGREEN_BODY_PRIMARY_PUNCH_NAME", prefix + "_MRGREEN_BODY_PRIMARY_PUNCH_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texBoxingGlovesIcon"), true));
             #endregion
 
             #region Secondary
@@ -427,7 +427,7 @@ namespace HenryMod.Modules.Enemies
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddUtilitySkill(prefab, dashSkillDef);
+            Modules.Skills.AddUtilitySkills(prefab, dashSkillDef);
             #endregion
 
             #region Special
@@ -455,7 +455,7 @@ namespace HenryMod.Modules.Enemies
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddSpecialSkill(prefab, resSkillDef);
+            Modules.Skills.AddSpecialSkills(prefab, resSkillDef);
             #endregion
         }
 
@@ -466,7 +466,7 @@ namespace HenryMod.Modules.Enemies
             string prefix = HenryPlugin.developerPrefix;
 
             #region Primary
-            Modules.Skills.AddPrimarySkill(prefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.PunchCombo)), "Body", prefix + "_MRGREEN_BODY_PRIMARY_PUNCH_NAME", prefix + "_MRGREEN_BODY_PRIMARY_PUNCH_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texBoxingGlovesIcon"), true));
+            Modules.Skills.AddPrimarySkills(prefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.PunchCombo)), "Body", prefix + "_MRGREEN_BODY_PRIMARY_PUNCH_NAME", prefix + "_MRGREEN_BODY_PRIMARY_PUNCH_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texBoxingGlovesIcon"), true));
             #endregion
 
             #region Secondary
@@ -523,7 +523,7 @@ namespace HenryMod.Modules.Enemies
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddUtilitySkill(prefab, dashSkillDef);
+            Modules.Skills.AddUtilitySkills(prefab, dashSkillDef);
             #endregion
 
             #region Special
@@ -551,7 +551,7 @@ namespace HenryMod.Modules.Enemies
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddSpecialSkill(prefab, resSkillDef);
+            Modules.Skills.AddSpecialSkills(prefab, resSkillDef);
             #endregion
         }
 

@@ -108,7 +108,7 @@ namespace HenryMod.Modules
             LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_UNLOCKABLE_NAME", "Henry: Mastery");
 
             LanguageAPI.Add(prefix + "TYPHOONUNLOCKABLE_ACHIEVEMENT_NAME", "Henry: Grand Mastery");
-            LanguageAPI.Add(prefix + "TYPHOONUNLOCKABLE_ACHIEVEMENT_DESC", "As Henry, beat the game or obliterate on Typhoon.");
+            LanguageAPI.Add(prefix + "TYPHOONUNLOCKABLE_ACHIEVEMENT_DESC", "As Henry, beat the game or obliterate on Typhoon or Eclipse.\n<color=#8888>(Counts any difficulty Typhoon or higher)</color>");
             LanguageAPI.Add(prefix + "TYPHOONUNLOCKABLE_UNLOCKABLE_NAME", "Henry: Grand Mastery");
 
             LanguageAPI.Add(prefix + "DANTEUNLOCKABLE_ACHIEVEMENT_NAME", "Henry: Jackpot");

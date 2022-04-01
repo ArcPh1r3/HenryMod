@@ -13,7 +13,7 @@ namespace HenryMod.SkillStates.Nemry.ChargeSlash
         {
             base.OnEnter();
             base.characterBody.isSprinting = true;
-            if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Standard;
+           // todo cum2 camera if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Standard;
             base.characterBody.hideCrosshair = false;
 
             EntityStateMachine desiredStateMachine = this.outer;

@@ -25,110 +25,139 @@
 
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\libs\0Harmony.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="AncientScepter">
       <HintPath>..\libs\AncientScepter.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\libs\Assembly-CSharp.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx">
-      <HintPath>..\libs\BepInEx.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx.Harmony">
-      <HintPath>..\libs\BepInEx.Harmony.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\BepInEx.Harmony.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx.MonoMod.Loader">
-      <HintPath>..\libs\BepInEx.MonoMod.Loader.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\BepInEx.MonoMod.Loader.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx.Preloader">
-      <HintPath>..\libs\BepInEx.Preloader.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\BepInEx.Preloader.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.multiplayer-hlapi.Runtime">
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Facepunch.Steamworks">
-      <HintPath>..\libs\Facepunch.Steamworks.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\Facepunch.Steamworks.dll</HintPath>
     </Reference>
     <Reference Include="HGCSharpUtils">
-      <HintPath>..\libs\HGCSharpUtils.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\HGCSharpUtils.dll</HintPath>
     </Reference>
     <Reference Include="HGUnityUtils">
-      <HintPath>..\libs\HGUnityUtils.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\HGUnityUtils.dll</HintPath>
     </Reference>
-    <Reference Include="MMHOOK_Assembly-CSharp">
-      <HintPath>..\libs\MMHOOK_Assembly-CSharp.dll</HintPath>
+    <Reference Include="KinematicCharacterController">
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\KinematicCharacterController.dll</HintPath>
+    </Reference>
+    <Reference Include="LegacyResourcesAPI">
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\LegacyResourcesAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="MMHOOK_RoR2">
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\MMHOOK_RoR2.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
-      <HintPath>..\libs\Mono.Cecil.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil.Mdb">
-      <HintPath>..\libs\Mono.Cecil.Mdb.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil.Pdb">
-      <HintPath>..\libs\Mono.Cecil.Pdb.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil.Rocks">
-      <HintPath>..\libs\Mono.Cecil.Rocks.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="MonoMod">
-      <HintPath>..\libs\MonoMod.exe</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\MonoMod.exe</HintPath>
     </Reference>
     <Reference Include="MonoMod.RuntimeDetour">
-      <HintPath>..\libs\MonoMod.RuntimeDetour.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\MonoMod.RuntimeDetour.dll</HintPath>
     </Reference>
     <Reference Include="MonoMod.Utils">
-      <HintPath>..\libs\MonoMod.Utils.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\MonoMod.Utils.dll</HintPath>
     </Reference>
     <Reference Include="R2API">
-      <HintPath>..\libs\R2API.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\R2API.dll</HintPath>
     </Reference>
     <Reference Include="Rewired_Core">
-      <HintPath>..\..\Moonstorm\Starstorm 2\bin\Debug\Rewired_Core.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\Rewired_Core.dll</HintPath>
     </Reference>
-    <Reference Include="Starstorm2">
-      <HintPath>..\..\Moonstorm\Starstorm 2\bin\Debug\Starstorm2.dll</HintPath>
+    <Reference Include="Rewired_CSharp">
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\Rewired_CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="RoR2">
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\RoR2.dll</HintPath>
+    </Reference>
+    <Reference Include="Skills">
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\Skills.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\Unity.Addressables.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>..\libs\Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>..\libs\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\libs\UnityEngine.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>..\libs\UnityEngine.AnimationModule.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>..\libs\UnityEngine.AssetBundleModule.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\libs\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>..\libs\UnityEngine.Networking.dll</HintPath>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\UnityEngine.InputModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>..\libs\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\UnityEngine.ParticleSystemModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\libs\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\libs\UnityEngine.UI.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule">
-      <HintPath>..\libs\UnityEngine.UIModule.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UNETModule">
-      <HintPath>..\libs\UnityEngine.UNETModule.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\UnityEngine.UNETModule.dll</HintPath>
     </Reference>
     <Reference Include="Wwise">
-      <HintPath>..\libs\Wwise.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\Wwise.dll</HintPath>
     </Reference>
     <Reference Include="Zio">
-      <HintPath>..\libs\Zio.dll</HintPath>
+      <HintPath>E:\Abbas's stuff VII I think\1337 haxx\ror2lol\Chikara ga minegitte kuru\HenryMod\libs\Zio.dll</HintPath>
     </Reference>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /Y &quot;$(TargetPath)&quot; &quot;$(ProjectDir)..\Release&quot;&#xD;&#xA;if &quot;$(Username)&quot; == &quot;Erikbir&quot; copy /Y &quot;$(TargetPath)&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\r2modman\BepInEx\plugins\rob-HenryMod\&quot;" />
+  </Target>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="copy /Y &quot;$(ProjectDir)..\HenryUnityProject\AssetBundles\pleasechangethisnameinyourprojectorelseyouwillcauseconflicts&quot; &quot;$(ProjectDir)&quot;" />
+  </Target>
 
 </Project>

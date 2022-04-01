@@ -38,10 +38,6 @@ namespace HenryMod
 
         public static HenryPlugin instance;
 
-        internal static CharacterCameraParams defaultCameraParams;
-        internal static CharacterCameraParams zoomInCameraParams;
-        internal static CharacterCameraParams emoteCameraParams;
-
         private void Awake()
         {
             instance = this;
@@ -49,11 +45,6 @@ namespace HenryMod
             // check for soft dependencies
             if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.TeamMoonstorm.Starstorm2")) starstormInstalled = true;
             if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter")) scepterInstalled = true;
-
-            // create camera params
-            defaultCameraParams = NewCameraParams("ccpHenryDefault", 70f, 1.37f, new Vector3(0f, 0f, -10f));
-            zoomInCameraParams = NewCameraParams("ccpHenryZoomIn", 70f, 1.37f, new Vector3(0f, -1f, -5.5f));
-            emoteCameraParams = NewCameraParams("ccpHenryEmote", 70f, 1.37f, new Vector3(0f, -1.4f, -6f));
 
             // load assets and read config
             Modules.Assets.Initialize();
@@ -70,36 +61,18 @@ namespace HenryMod
 
             // nemry leak? if you're reading this keep quiet about it please.
             // use it as an example for your own nemesis if you want i suppose
-            new Modules.Enemies.Nemry().CreateCharacter();
+            //new Modules.Enemies.Nemry().CreateCharacter();
 
             new Modules.ContentPacks().Initialize();
 
             Hook();
 
-            RoR2.ContentManagement.ContentManager.onContentPacksAssigned += LateSetup;
+            RoR2.RoR2Application.onLoad += LateSetup;
         }
 
-        private void LateSetup(global::HG.ReadOnlyArray<ReadOnlyContentPack> obj)
+        private void LateSetup()
         {
             Modules.Survivors.Henry.instance.SetItemDisplays();
-        }
-
-        private static CharacterCameraParams NewCameraParams(string name, float pitch, float pivotVerticalOffset, Vector3 standardPosition)
-        {
-            return NewCameraParams(name, pitch, pivotVerticalOffset, standardPosition, 0.1f);
-        }
-
-        private static CharacterCameraParams NewCameraParams(string name, float pitch, float pivotVerticalOffset, Vector3 standardPosition, float wallCushion)
-        {
-            CharacterCameraParams newParams = ScriptableObject.CreateInstance<CharacterCameraParams>();
-
-            newParams.maxPitch = pitch;
-            newParams.minPitch = -pitch;
-            newParams.pivotVerticalOffset = pivotVerticalOffset;
-            newParams.standardLocalCameraPos = standardPosition;
-            newParams.wallCushion = wallCushion;
-
-            return newParams;
         }
 
         private void Hook()

@@ -91,7 +91,7 @@ namespace HenryMod.Modules.Survivors
             string prefix = HenryPlugin.developerPrefix;
 
             #region Primary
-            Modules.Skills.AddPrimarySkill(bodyPrefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.SlashCombo)), "Weapon", prefix + "_HENRY_BODY_PRIMARY_SLASH_NAME", prefix + "_HENRY_BODY_PRIMARY_SLASH_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texPrimaryIcon"), true));
+            Modules.Skills.AddPrimarySkills(bodyPrefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.SlashCombo)), "Weapon", prefix + "_HENRY_BODY_PRIMARY_SLASH_NAME", prefix + "_HENRY_BODY_PRIMARY_SLASH_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texPrimaryIcon"), true));
             #endregion
 
             #region Secondary
@@ -120,7 +120,7 @@ namespace HenryMod.Modules.Survivors
                 keywordTokens = new string[] { "KEYWORD_AGILE" }
             });
 
-            Modules.Skills.AddSecondarySkill(bodyPrefab, shootSkillDef);
+            Modules.Skills.AddSecondarySkills(bodyPrefab, shootSkillDef);
             #endregion
 
             #region Utility
@@ -148,7 +148,7 @@ namespace HenryMod.Modules.Survivors
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddUtilitySkill(bodyPrefab, rollSkillDef);
+            Modules.Skills.AddUtilitySkills(bodyPrefab, rollSkillDef);
             #endregion
 
             #region Special
@@ -176,7 +176,7 @@ namespace HenryMod.Modules.Survivors
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddSpecialSkill(bodyPrefab, bombSkillDef);
+            Modules.Skills.AddSpecialSkills(bodyPrefab, bombSkillDef);
             #endregion
         }
 

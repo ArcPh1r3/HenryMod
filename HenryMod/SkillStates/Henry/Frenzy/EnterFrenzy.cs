@@ -42,7 +42,8 @@ namespace HenryMod.SkillStates.Henry.Frenzy
             base.PlayAnimation("FullBody, Override", "FrenzyEnter", "Frenzy.playbackRate", this.duration);
             Util.PlaySound("HenryFrenzyCharge", base.gameObject);
 
-            base.cameraTargetParams.cameraParams = HenryPlugin.zoomInCameraParams;
+            //todo cum2 fix camera
+            //base.cameraTargetParams.cameraParams = HenryPlugin.zoomInCameraParams;
 
             this.storedPosition = base.transform.position;
         }

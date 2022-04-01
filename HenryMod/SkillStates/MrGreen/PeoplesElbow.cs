@@ -118,7 +118,7 @@ namespace HenryMod.SkillStates.MrGreen
             blastAttack.baseForce = PeoplesElbow.slamForce;
             blastAttack.teamIndex = TeamComponent.GetObjectTeam(blastAttack.attacker);
             blastAttack.damageType = DamageType.Stun1s;
-            blastAttack.attackerFiltering = AttackerFiltering.NeverHit;
+            blastAttack.attackerFiltering = AttackerFiltering.NeverHitSelf;
             blastAttack.Fire();
 
             EffectManager.SpawnEffect(EntityStates.LemurianBruiserMonster.SpawnState.spawnEffectPrefab, new EffectData

@@ -1,8 +1,7 @@
 ﻿using BepInEx.Configuration;
 using UnityEngine;
 
-namespace HenryMod.Modules
-{
+namespace HenryMod.Modules {
     public static class Config
     {
         public static ConfigEntry<bool> rampageEffects;

@@ -22,6 +22,10 @@ namespace HenryMod.SkillStates.Bazooka.Scepter
             this.duration = BazookaEnter.baseDuration / this.attackSpeedStat;
             this.henryController.hasBazookaReady = true;
 
+            this.henryController.UpdateCrosshair();
+            base.henryController.EnterBazookaCamera();
+            base.characterBody.aimOriginTransform = GetModelChildLocator().FindChild("BazookaAim");
+
             //if (NetworkServer.active) base.characterBody.AddBuff(BuffIndex.Slow50);
 
             base.PlayAnimation("RightArm, Override", "BufferEmpty");
@@ -35,9 +39,8 @@ namespace HenryMod.SkillStates.Bazooka.Scepter
             base.skillLocator.special.SetSkillOverride(base.skillLocator.utility, BazookaEnter.cancelDef, GenericSkill.SkillOverridePriority.Contextual);
             base.skillLocator.utility.SetSkillOverride(base.skillLocator.special, BazookaEnter.cancelDef, GenericSkill.SkillOverridePriority.Contextual);
 
-            if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.OverTheShoulder;
+           // todo cum2 camera if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.OverTheShoulder;
 
-            this.henryController.UpdateCrosshair();
         }
 
         public override void FixedUpdate()

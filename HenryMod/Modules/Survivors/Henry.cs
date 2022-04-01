@@ -35,7 +35,7 @@ namespace HenryMod.Modules.Survivors
             maxHealth = 110f,
             subtitleNameToken = HenryPlugin.developerPrefix + "_HENRY_BODY_SUBTITLE",
             podPrefab = Resources.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
-            aimOriginPosition = new Vector3(0f, 2f, 0f)
+            aimOriginPosition = new Vector3(0f, 2.0f, 0f)
         };
 
         internal static Material henryMat = Modules.Assets.CreateMaterial("matHenry");
@@ -117,13 +117,15 @@ namespace HenryMod.Modules.Survivors
         {
             base.InitializeCharacter();
 
-            if (HenryPlugin.scepterInstalled) CreateScepterSkills();
+            if (HenryPlugin.scepterInstalled) 
+                CreateScepterSkills();
 
             this.bodyPrefab.GetComponent<SfxLocator>().deathSound = "HenryDeath";
             this.bodyPrefab.AddComponent<Components.HenryController>();
             this.bodyPrefab.AddComponent<Components.HenryTracker>();
             this.bodyPrefab.AddComponent<Components.HenryFuryComponent>();
-            this.bodyPrefab.GetComponent<CameraTargetParams>().cameraParams = HenryPlugin.defaultCameraParams;
+            //todo cum2 camera fix
+            //this.bodyPrefab.GetComponent<CameraTargetParams>().cameraParams = HenryPlugin.defaultCameraParams;
 
             On.RoR2.UI.HUD.Awake += HUDAwake;
         }
@@ -132,7 +134,7 @@ namespace HenryMod.Modules.Survivors
         {
             characterUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.HenryUnlockAchievement>(true);
             masterySkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.MasteryAchievement>(true);
-            //Modules.Unlockables.AddUnlockable<Achievements.GrandMasteryAchievement>(true);
+            grandMasterySkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.GrandMasteryAchievement>(true);
             danteSkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.DanteAchievement>(true);
             vergilSkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.VergilAchievement>(true);
         }
@@ -161,9 +163,9 @@ namespace HenryMod.Modules.Survivors
             string prefix = HenryPlugin.developerPrefix;
 
             #region Primary
-            Modules.Skills.AddPrimarySkill(bodyPrefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.SlashCombo)), "Weapon", prefix + "_HENRY_BODY_PRIMARY_SLASH_NAME", prefix + "_HENRY_BODY_PRIMARY_SLASH_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texPrimaryIcon"), true));
-            Modules.Skills.AddPrimarySkill(bodyPrefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.PunchCombo)), "Weapon", prefix + "_HENRY_BODY_PRIMARY_PUNCH_NAME", prefix + "_HENRY_BODY_PRIMARY_PUNCH_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texBoxingGlovesIcon"), true));
-            Modules.Skills.AddPrimarySkill(bodyPrefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.ShootAlt)), "Weapon", prefix + "_HENRY_BODY_PRIMARY_GUN_NAME", prefix + "_HENRY_BODY_PRIMARY_GUN_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texPistolIcon"), true));
+            Modules.Skills.AddPrimarySkills(bodyPrefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.SlashCombo)), "Weapon", prefix + "_HENRY_BODY_PRIMARY_SLASH_NAME", prefix + "_HENRY_BODY_PRIMARY_SLASH_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texPrimaryIcon"), true));
+            Modules.Skills.AddPrimarySkills(bodyPrefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.PunchCombo)), "Weapon", prefix + "_HENRY_BODY_PRIMARY_PUNCH_NAME", prefix + "_HENRY_BODY_PRIMARY_PUNCH_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texBoxingGlovesIcon"), true));
+            Modules.Skills.AddPrimarySkills(bodyPrefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.ShootAlt)), "Weapon", prefix + "_HENRY_BODY_PRIMARY_GUN_NAME", prefix + "_HENRY_BODY_PRIMARY_GUN_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texPistolIcon"), true));
             #endregion
 
             #region Secondary
@@ -545,6 +547,13 @@ namespace HenryMod.Modules.Survivors
                 stockToConsume = 0
             });
 
+            if (HenryPlugin.scepterInstalled) {
+                AddScepterSKills(bombSkillDef, bazookaSkillDef, frenzySkillDef);
+            }
+        }
+        
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private static void AddScepterSKills(SkillDef bombSkillDef, SkillDef bazookaSkillDef, SkillDef frenzySkillDef) {
             AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(bombSkillDef, instance.fullBodyName, SkillSlot.Special, 0);
             AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(bazookaSkillDef, instance.fullBodyName, SkillSlot.Special, 1);
             AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(frenzySkillDef, instance.fullBodyName, SkillSlot.Special, 2);
@@ -659,59 +668,57 @@ namespace HenryMod.Modules.Survivors
             #endregion
 
             #region GrandMasterySkin
-            if (HenryPlugin.starstormInstalled)
+            Material grandMasteryMat = Modules.Assets.CreateMaterial("matHenryNeo");
+            CharacterModel.RendererInfo[] grandMasteryRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
             {
-                Material grandMasteryMat = Modules.Assets.CreateMaterial("matHenryNeo");
-                CharacterModel.RendererInfo[] grandMasteryRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
-                {
-                    grandMasteryMat,
-                    grandMasteryMat,
-                    grandMasteryMat,
-                    grandMasteryMat
-                });
+                grandMasteryMat,
+                grandMasteryMat,
+                grandMasteryMat,
+                grandMasteryMat
+            });
 
-                SkinDef grandMasterySkin = Modules.Skins.CreateSkinDef(HenryPlugin.developerPrefix + "_HENRY_BODY_TYPHOON_SKIN_NAME",
-                    Assets.mainAssetBundle.LoadAsset<Sprite>("texGrandMasteryAchievement"),
-                    grandMasteryRendererInfos,
-                    mainRenderer,
-                    model,
-                    grandMasterySkinUnlockableDef);
+            SkinDef grandMasterySkin = Modules.Skins.CreateSkinDef(HenryPlugin.developerPrefix + "_HENRY_BODY_TYPHOON_SKIN_NAME",
+                Assets.mainAssetBundle.LoadAsset<Sprite>("texGrandMasteryAchievement"),
+                grandMasteryRendererInfos,
+                mainRenderer,
+                model,
+                grandMasterySkinUnlockableDef);
 
-                grandMasterySkin.meshReplacements = new SkinDef.MeshReplacement[]
-                {
-                new SkinDef.MeshReplacement
-                {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenrySword"),
-                    renderer = defaultRenderers[0].renderer
-                },
-                new SkinDef.MeshReplacement
-                {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenryNeo"),
-                    renderer = defaultRenderers[instance.mainRendererIndex].renderer
-                },
-                new SkinDef.MeshReplacement
-                {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshNeoCoat"),
-                    renderer = defaultRenderers[4].renderer
-                }
-                };
-
-                grandMasterySkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
-                {
-                new SkinDef.GameObjectActivation
-                {
-                    gameObject = coatObject,
-                    shouldActivate = true
-                },
-                new SkinDef.GameObjectActivation
-                {
-                    gameObject = swordTrail,
-                    shouldActivate = false
-                }
-                };
-
-                //skins.Add(grandMasterySkin);
+            grandMasterySkin.meshReplacements = new SkinDef.MeshReplacement[]
+            {
+            new SkinDef.MeshReplacement
+            {
+                mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenrySword"),
+                renderer = defaultRenderers[0].renderer
+            },
+            new SkinDef.MeshReplacement
+            {
+                mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenryNeo"),
+                renderer = defaultRenderers[instance.mainRendererIndex].renderer
+            },
+            new SkinDef.MeshReplacement
+            {
+                mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshNeoCoat"),
+                renderer = defaultRenderers[4].renderer
             }
+            };
+
+            grandMasterySkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
+            {
+            new SkinDef.GameObjectActivation
+            {
+                gameObject = coatObject,
+                shouldActivate = true
+            },
+            new SkinDef.GameObjectActivation
+            {
+                gameObject = swordTrail,
+                shouldActivate = false
+            }
+            };
+
+            skins.Add(grandMasterySkin);
+            
             #endregion
 
             #region VergilSkin
@@ -822,7 +829,7 @@ namespace HenryMod.Modules.Survivors
 
             skinController.skins = skins.ToArray();
         }
-
+        
         internal override void SetItemDisplays()
         {
             itemDisplayRules = new List<ItemDisplayRuleSet.KeyAssetRuleGroup>();
@@ -1200,7 +1207,7 @@ localScale = new Vector3(0.0289F, 0.0289F, 0.0289F),
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayClover"),
 childName = "Gun",
 localPos = new Vector3(0.0004F, 0.1094F, -0.1329F),
-localAngles = new Vector3(85.6192F, 0.0001F, 179.4897F),
+localAngles = new Vector3(85.6192F, 90, 179.4897F),
 localScale = new Vector3(0.2749F, 0.2749F, 0.2749F),
                             limbMask = LimbFlags.None
                         }
@@ -2384,7 +2391,7 @@ localScale = new Vector3(0.2845F, 0.2845F, 0.2845F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.CooldownOnCrit,
+                keyAsset = JunkContent.Items.CooldownOnCrit,
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2772,7 +2779,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Incubator,
+                keyAsset = JunkContent.Items.Incubator,
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]

@@ -53,7 +53,7 @@ namespace HenryMod.SkillStates.Nemry.Beam
             if (charge >= 0.6f && !this.zoomin)
             {
                 this.zoomin = true;
-                if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Aura;
+               // todo cum2 camera if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Aura;
             }
 
             if (charge >= 1f && !this.finishedCharge)
@@ -83,7 +83,7 @@ namespace HenryMod.SkillStates.Nemry.Beam
             AkSoundEngine.StopPlayingID(this.chargePlayID);
             if (this.chargeEffectInstance) EntityState.Destroy(this.chargeEffectInstance);
 
-            if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Aura;
+           // todo cum2 camera if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.Aura;
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()

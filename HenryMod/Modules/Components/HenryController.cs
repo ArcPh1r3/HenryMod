@@ -8,12 +8,14 @@ namespace HenryMod.Modules.Components
     public class HenryController : MonoBehaviour
     {
         public bool hasBazookaReady;
+        public Transform origAimOrigin;
 
         private CharacterBody characterBody;
         private CharacterModel model;
         private ChildLocator childLocator;
         private HenryTracker tracker;
         private Animator modelAnimator;
+        private CameraTargetParams cameraShit3;
 
         private bool inFrenzy;
         private ParticleSystem[] frenzyEffects;
@@ -22,10 +24,12 @@ namespace HenryMod.Modules.Components
         private void Awake()
         {
             this.characterBody = this.gameObject.GetComponent<CharacterBody>();
+            origAimOrigin = characterBody.aimOriginTransform;
             this.childLocator = this.gameObject.GetComponentInChildren<ChildLocator>();
             this.model = this.gameObject.GetComponentInChildren<CharacterModel>();
             this.tracker = this.gameObject.GetComponent<HenryTracker>();
             this.modelAnimator = this.gameObject.GetComponentInChildren<Animator>();
+            this.cameraShit3 = this.GetComponent<CameraTargetParams>();
             this.hasBazookaReady = false;
             this.inFrenzy = false;
 
@@ -85,8 +89,8 @@ namespace HenryMod.Modules.Components
             {
                 this.childLocator.FindChild("GunModel").gameObject.SetActive(false);
                 this.childLocator.FindChild("Gun").gameObject.SetActive(false);
-
-                this.characterBody.crosshairPrefab = Modules.Assets.LoadCrosshair("SimpleDot");
+                //todo cum2 crosshair
+                this.characterBody._defaultCrosshairPrefab = Modules.Assets.LoadCrosshair("SimpleDot");
                 hasTrackingSkill = true;
             }
             else if (this.characterBody.skillLocator.secondary.skillDef.skillNameToken == HenryPlugin.developerPrefix + "_HENRY_BODY_SECONDARY_UZI_NAME")
@@ -119,8 +123,15 @@ namespace HenryMod.Modules.Components
             {
                 desiredCrosshair = Modules.Assets.bazookaCrosshair;
             }
+            //todo cum2 crosshair
+            this.characterBody._defaultCrosshairPrefab = desiredCrosshair;
+        }
 
-            this.characterBody.crosshairPrefab = desiredCrosshair;
+        public void EnterBazookaCamera() {
+            Modules.Camera.ActivateCameraParamsOverride(cameraShit3, Camera.ParamsType.BAZOOKA);
+        }
+        public void ExitBazookaCamera() {
+            Modules.Camera.DeactivateCameraParamsOverrides(cameraShit3);
         }
 
         public void EnterFrenzy()

@@ -22,6 +22,10 @@ namespace HenryMod.SkillStates.Bazooka
             this.duration = BazookaEnter.baseDuration / this.attackSpeedStat;
             this.henryController.hasBazookaReady = true;
 
+            base.henryController.UpdateCrosshair();
+            base.henryController.EnterBazookaCamera();
+            base.characterBody.aimOriginTransform = GetModelChildLocator().FindChild("BazookaAim");
+
             if (NetworkServer.active) base.characterBody.AddBuff(RoR2Content.Buffs.Slow50);
 
             base.PlayAnimation("RightArm, Override", "BufferEmpty");
@@ -35,9 +39,11 @@ namespace HenryMod.SkillStates.Bazooka
             base.skillLocator.special.SetSkillOverride(base.skillLocator.utility, BazookaEnter.cancelDef, GenericSkill.SkillOverridePriority.Contextual);
             base.skillLocator.utility.SetSkillOverride(base.skillLocator.special, BazookaEnter.cancelDef, GenericSkill.SkillOverridePriority.Contextual);
 
-            if (base.cameraTargetParams) base.cameraTargetParams.aimMode = CameraTargetParams.AimType.OverTheShoulder;
-
-            this.henryController.UpdateCrosshair();
+            // todo cum2 camera if (base.cameraTargetParams) {
+            //todo cum2 camera fix, requestaimtype literally only works with aura now
+            //base.cameraTargetParams.RequestAimType(CameraTargetParams.AimType.OverTheShoulder);
+            //base.cameraTargetParams.aimMode = CameraTargetParams.AimType.OverTheShoulder;
+            //}
         }
 
         public override void FixedUpdate()

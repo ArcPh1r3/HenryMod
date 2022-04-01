@@ -45,7 +45,8 @@ namespace HenryMod.SkillStates.Emotes
                 }
             }
 
-            base.cameraTargetParams.cameraParams = HenryPlugin.emoteCameraParams;
+            //todod cum2 fix camera
+            //base.cameraTargetParams.cameraParams = HenryPlugin.emoteCameraParams;
         }
 
         public override void OnExit()
@@ -69,7 +70,8 @@ namespace HenryMod.SkillStates.Emotes
                 }
             }
 
-            base.cameraTargetParams.cameraParams = HenryPlugin.defaultCameraParams;
+            //todo cum2 fix camera
+            //base.cameraTargetParams.cameraParams = HenryPlugin.defaultCameraParams;
 
             base.PlayAnimation("FullBody, Override", "BufferEmpty");
             if (this.activePlayID != 0) AkSoundEngine.StopPlayingID(this.activePlayID);
