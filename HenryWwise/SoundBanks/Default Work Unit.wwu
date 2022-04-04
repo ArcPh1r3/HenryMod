@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0523EEC4-024E-4B70-AFB9-7B74FB2DD860}" SchemaVersion="97">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{0523EEC4-024E-4B70-AFB9-7B74FB2DD860}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="HenryBank" ID="{E2BA1CEF-07C4-4351-AB88-6DEAF0723F89}">
+					<ObjectInclusionList>
+						<ObjectRef Name="HenryBazookaCharge" ID="{AF8128F6-35E8-40D6-8DAA-AF1A11CCA8A3}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryBazookaExplosion" ID="{FCD639A3-6716-47C6-A373-4B2BF22A24A6}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryDeath" ID="{348B7F07-B034-4A0B-B960-942C7CBCD875}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

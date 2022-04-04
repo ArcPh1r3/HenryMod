@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{DA0146FE-4671-4EE9-B73B-FF33C451594E}" SchemaVersion="97">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{DA0146FE-4671-4EE9-B73B-FF33C451594E}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="Volume_SFX" ID="{3D994609-A451-46E5-921F-3B751C78E118}"/>
+				<GameParameter Name="attackSpeed" ID="{252F0884-894E-4D3A-80D6-C030CE59E49B}">
+					<PropertyList>
+						<Property Name="Max" Type="Real64" Value="200"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

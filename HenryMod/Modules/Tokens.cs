@@ -32,6 +32,11 @@ namespace HenryMod.Modules
             LanguageAPI.Add(prefix + "TYPHOON_SKIN_NAME", "V1");
             LanguageAPI.Add(prefix + "DANTE_SKIN_NAME", "Dante");
             LanguageAPI.Add(prefix + "VERGIL_SKIN_NAME", "Vergil");
+
+            LanguageAPI.Add(prefix + "SAMURAI_SKIN_NAME", "Samurai");
+            LanguageAPI.Add(prefix + "SOLDIER_SKIN_NAME", "Champion");
+            LanguageAPI.Add(prefix + "ZOMBIE_SKIN_NAME", "Zombie");
+            LanguageAPI.Add(prefix + "SKELETON_SKIN_NAME", "Skeleton");
             #endregion
 
             #region Passive

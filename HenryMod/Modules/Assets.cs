@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using RoR2.UI;
 using UnityEngine.Rendering.PostProcessing;
 using RoR2.Projectile;
+using System;
 
 namespace HenryMod.Modules
 {
@@ -460,39 +461,22 @@ namespace HenryMod.Modules
             effectDefs.Add(newEffectDef);
         }
 
-        public static Material CreateMaterial(string materialName, float emission, Color emissionColor, float normalStrength)
-        {
-            if (!commandoMat) commandoMat = Resources.Load<GameObject>("Prefabs/CharacterBodies/CommandoBody").GetComponentInChildren<CharacterModel>().baseRendererInfos[0].defaultMaterial;
-
-            Material mat = UnityEngine.Object.Instantiate<Material>(commandoMat);
-            Material tempMat = Assets.mainAssetBundle.LoadAsset<Material>(materialName);
-
-            if (!tempMat) return commandoMat;
-
-            mat.name = materialName;
-            mat.SetColor("_Color", tempMat.GetColor("_Color"));
-            mat.SetTexture("_MainTex", tempMat.GetTexture("_MainTex"));
-            mat.SetColor("_EmColor", emissionColor);
-            mat.SetFloat("_EmPower", emission);
-            mat.SetTexture("_EmTex", tempMat.GetTexture("_EmissionMap"));
-            mat.SetFloat("_NormalStrength", normalStrength);
-
-            return mat;
+        #region materials(old)
+        private const string obsolete = "use `Materials.CreateMaterial` instead, or use the extension `Material.SetHotpooMaterial` directly on a material";
+        [Obsolete(obsolete)]
+        public static Material CreateMaterial(string materialName) => Materials.CreateHotpooMaterial(materialName);
+        [Obsolete(obsolete)]
+        public static Material CreateMaterial(string materialName, float emission) => Materials.CreateHotpooMaterial(materialName);
+        [Obsolete(obsolete)]
+        public static Material CreateMaterial(string materialName, float emission, Color emissionColor) => CreateMaterial(materialName, emission, emissionColor, 0f);
+        [Obsolete(obsolete)]
+        public static Material CreateMaterial(string materialName, float emission, Color emissionColor, float normalStrength) {
+            return Materials.CreateHotpooMaterial(materialName)
+                            .MakeUnique()
+                            .SetEmission(emission, emissionColor)
+                            .SetNormal(normalStrength);
         }
+        #endregion materials(old)
 
-        public static Material CreateMaterial(string materialName)
-        {
-            return Assets.CreateMaterial(materialName, 0f);
-        }
-
-        public static Material CreateMaterial(string materialName, float emission)
-        {
-            return Assets.CreateMaterial(materialName, emission, Color.white);
-        }
-
-        public static Material CreateMaterial(string materialName, float emission, Color emissionColor)
-        {
-            return Assets.CreateMaterial(materialName, emission, emissionColor, 0f);
-        }
     }
 }

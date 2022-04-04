@@ -92,7 +92,7 @@ namespace HenryMod.Modules
             bazookaImpactExplosion.destroyOnEnemy = true;
             bazookaImpactExplosion.lifetime = 12f;
             bazookaImpactExplosion.impactEffect = Modules.Assets.bazookaExplosionEffect;
-            //bazookaImpactExplosion.lifetimeExpiredSound = Modules.Assets.CreateNetworkSoundEventDef("HenryBazookaExplosion");
+            bazookaImpactExplosion.lifetimeExpiredSound = Modules.Assets.CreateNetworkSoundEventDef("HenryBazookaExplosion");
             bazookaImpactExplosion.timerAfterImpact = true;
             bazookaImpactExplosion.lifetimeAfterImpact = 0f;
 

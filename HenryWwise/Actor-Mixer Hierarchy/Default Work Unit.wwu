@@ -1,0 +1,1566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{685EA393-C13A-47F6-B3B9-A1F52741F224}" SchemaVersion="97">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{685EA393-C13A-47F6-B3B9-A1F52741F224}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="Sfx Mixer" ID="{954034B3-C4A8-4078-AD39-ED71A6F4950E}" ShortID="1048828398">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<RTPCList>
+								<RTPC Name="" ID="{3D8F84F2-7B7B-4F33-B61E-E680677F0F3C}" ShortID="722780693">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="Volume_SFX" ID="{3D994609-A451-46E5-921F-3B751C78E118}" WorkUnitID="{DA0146FE-4671-4EE9-B73B-FF33C451594E}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{6FC3F55F-A55B-4826-BBEB-9D265DB5999D}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-200</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Folder Name="Henry" ID="{B940E6A6-8281-4DA3-95D2-645080D358AC}" ShortID="916454883">
+							<ChildrenList>
+								<Sound Name="HenryDance" ID="{49AEC8A9-3E5B-46B5-A057-28C5D2450FFF}" ShortID="952122290">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="HenryDance" ID="{D98089EB-54FE-4A1D-99C9-9C1E062C4655}">
+											<Language>SFX</Language>
+											<AudioFile>HenryDance.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="524167880"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="HenryDance" ID="{D98089EB-54FE-4A1D-99C9-9C1E062C4655}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="HenryRoll" ID="{9A3E4AF6-9751-4E6C-A1D8-CB873CD2CF85}" ShortID="1031103446">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="HenryRoll" ID="{FA9B8DE6-819D-4FAC-9A8B-D4581EB306FE}">
+											<Language>SFX</Language>
+											<AudioFile>HenryRoll.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="983206467"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="HenryRoll" ID="{FA9B8DE6-819D-4FAC-9A8B-D4581EB306FE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="HenryStinger1" ID="{0CE58F47-0F2D-4880-BA31-6A011C38C056}" ShortID="455070234">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="HenryStinger1" ID="{573F47F4-F927-4168-B621-C9FBF9CD6877}">
+											<Language>SFX</Language>
+											<AudioFile>HenryStinger1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="321595002"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="HenryStinger1" ID="{573F47F4-F927-4168-B621-C9FBF9CD6877}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="HenryStinger2" ID="{A7F4A632-3BDC-4331-BBDB-C7A4F5C7002E}" ShortID="1005227453">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="HenryStinger2" ID="{37A6E2E3-E1B3-41DF-BDDB-BAE558E87FC0}">
+											<Language>SFX</Language>
+											<AudioFile>HenryStinger2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="427916648"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="HenryStinger2" ID="{37A6E2E3-E1B3-41DF-BDDB-BAE558E87FC0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="HenrySuperSand" ID="{31592480-9FB9-4D36-B8EC-F653DE08EAAD}" ShortID="702488316">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="HenrySuperSand" ID="{E19394E2-8438-43D8-A102-8ECCD20451CC}">
+											<Language>SFX</Language>
+											<AudioFile>HenrySuperSand.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="599457028"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="HenrySuperSand" ID="{E19394E2-8438-43D8-A102-8ECCD20451CC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="rulesofnature" ID="{F8A7489A-7FA6-49F8-A722-1C5A3C0B1140}" ShortID="234244976">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="rulesofnature" ID="{19DA463D-993A-4141-B917-BC4F227DF8B5}">
+											<Language>SFX</Language>
+											<AudioFile>rulesofnature.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="479992517"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="rulesofnature" ID="{19DA463D-993A-4141-B917-BC4F227DF8B5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<RandomSequenceContainer Name="HenryDeath" ID="{F14BB325-9F0E-44C6-B94A-0A947E862260}" ShortID="116545864">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{F11A907E-8B74-48A6-8714-F31944A3AFAB}">
+														<PropertyList>
+															<Property Name="Max" Type="Real64" Value="69"/>
+															<Property Name="Min" Type="Real64" Value="-69"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="HenryDeath6" ID="{812D7B23-BFF2-4B48-B565-D5FC357D2D37}" ShortID="995869327">
+											<PropertyList>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="HenryDeath6" ID="{9E9F8AEC-6406-44FF-A34B-C2F64393B8BC}">
+													<Language>SFX</Language>
+													<AudioFile>HenryDeath6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="706517323"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="HenryDeath6" ID="{9E9F8AEC-6406-44FF-A34B-C2F64393B8BC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="HenryDeath4" ID="{F1621271-9F8D-4E5D-B309-70B57DB7A845}" ShortID="200205083">
+											<PropertyList>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="HenryDeath4" ID="{2EA11F94-7CC3-4ACE-8BDF-BDB31DAA7675}">
+													<Language>SFX</Language>
+													<AudioFile>HenryDeath4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="574378924"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="HenryDeath4" ID="{2EA11F94-7CC3-4ACE-8BDF-BDB31DAA7675}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="HenryDeath1" ID="{E5C982A0-2068-447D-8D27-BE637E8220F9}" ShortID="538707463">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="HenryDeath1" ID="{4DF485FD-AE0D-41BF-84AC-8B0614C46D55}">
+													<Language>SFX</Language>
+													<AudioFile>HenryDeath1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="594947060"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="HenryDeath1" ID="{4DF485FD-AE0D-41BF-84AC-8B0614C46D55}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="HenryDeath5" ID="{CB48C044-D334-443C-AA45-3126E8EF05FD}" ShortID="356797092">
+											<PropertyList>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="HenryDeath5" ID="{6AF1895A-079A-42EF-B124-C27ACFDF2DF7}">
+													<Language>SFX</Language>
+													<AudioFile>HenryDeath5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="648087356"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="HenryDeath5" ID="{6AF1895A-079A-42EF-B124-C27ACFDF2DF7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="HenryDeath2" ID="{61D1F529-C1E9-4B74-8497-C3DF4B3D11C1}" ShortID="991394342">
+											<PropertyList>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="HenryDeath2" ID="{E4903A1D-7F90-40B9-A615-AD671EC88D51}">
+													<Language>SFX</Language>
+													<AudioFile>HenryDeath2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="928256092"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="HenryDeath2" ID="{E4903A1D-7F90-40B9-A615-AD671EC88D51}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="HenryDeath3" ID="{4892DD3F-9B9C-4DF2-8006-F127C9AD7F86}" ShortID="837334024">
+											<PropertyList>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="HenryDeath3" ID="{A12EEC76-E3EB-41F4-8940-D25194CAC60E}">
+													<Language>SFX</Language>
+													<AudioFile>HenryDeath3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="181070935"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="HenryDeath3" ID="{A12EEC76-E3EB-41F4-8940-D25194CAC60E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<Folder Name="Skills" ID="{861B600E-09F8-4CBE-B067-8440E5DB1B5A}" ShortID="502320567">
+									<ChildrenList>
+										<Folder Name="Bazooka" ID="{71260F4F-DB33-4641-9AE2-17EC1BCB4ECE}" ShortID="866180798">
+											<ChildrenList>
+												<Sound Name="HenryBazookaFire" ID="{F7CA784C-14B9-46DF-9F43-7D797843E8C6}" ShortID="81489423">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryBazookaFire" ID="{84F9147E-FB50-48CB-8E58-489D25049316}">
+															<Language>SFX</Language>
+															<AudioFile>HenryBazookaFire.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="382408622"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryBazookaFire" ID="{84F9147E-FB50-48CB-8E58-489D25049316}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryBazookaCharge" ID="{E5A7AB4B-A4AF-4C89-BDD9-EA6072FA1762}" ShortID="627943832">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="Pitch" Type="int32">
+															<RTPCList>
+																<RTPC Name="" ID="{A4FE5279-B978-4EAB-B288-5FC9495C060F}" ShortID="914043929">
+																	<ReferenceList>
+																		<Reference Name="ControlInput">
+																			<ObjectRef Name="attackSpeed" ID="{252F0884-894E-4D3A-80D6-C030CE59E49B}" WorkUnitID="{DA0146FE-4671-4EE9-B73B-FF33C451594E}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<Curve Name="" ID="{6C14FC37-496E-4F11-920B-0DD9910A0662}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="65537"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-1659</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>50</XPos>
+																				<YPos>0</YPos>
+																				<Flags>0</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>68.73856</XPos>
+																				<YPos>1437</YPos>
+																				<Flags>0</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>138.03922</XPos>
+																				<YPos>3680</YPos>
+																				<Flags>0</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>200</XPos>
+																				<YPos>4325</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</RTPC>
+															</RTPCList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-2</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryBazookaCharge" ID="{F074DC9F-7C7E-4C4C-8934-22F980098F25}">
+															<Language>SFX</Language>
+															<AudioFile>HenryBazookaCharge.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="547312936"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryBazookaCharge" ID="{F074DC9F-7C7E-4C4C-8934-22F980098F25}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryBazookaEquip" ID="{AA1B6D5E-FE52-4AD8-BCE1-0C27304F880B}" ShortID="932845439">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryBazookaEquip" ID="{A90BA771-B6AA-4177-B055-852299F65055}">
+															<Language>SFX</Language>
+															<AudioFile>HenryBazookaEquip.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="252880888"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryBazookaEquip" ID="{A90BA771-B6AA-4177-B055-852299F65055}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryBazookaUnequip" ID="{FB004FB4-F910-4B64-A4EA-DDFA4E5EE0C7}" ShortID="253056605">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryBazookaUnequip" ID="{14C1D51D-DB79-4C29-B269-965BF15BE3E7}">
+															<Language>SFX</Language>
+															<AudioFile>HenryBazookaUnequip.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="301275395"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryBazookaUnequip" ID="{14C1D51D-DB79-4C29-B269-965BF15BE3E7}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<RandomSequenceContainer Name="HenryBazookaExplosion" ID="{0EFE1C00-1CEE-4BC4-B27D-10F80D60DD09}" ShortID="667662541">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="HenryBazookaExplosion4" ID="{E310EFD7-0A97-428A-90BC-A9E16212FD54}" ShortID="157238170">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="HenryBazookaExplosion4" ID="{7A01B888-DF62-46B2-915D-78F7C158C4B5}">
+																	<Language>SFX</Language>
+																	<AudioFile>HenryBazookaExplosion4.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="649235339"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="HenryBazookaExplosion4" ID="{7A01B888-DF62-46B2-915D-78F7C158C4B5}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="HenryBazookaExplosion3" ID="{41E595B8-9055-4359-9777-D4784370B600}" ShortID="255085033">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="HenryBazookaExplosion3" ID="{1C035C2A-9008-4C22-8A45-A8E708EBC3C9}">
+																	<Language>SFX</Language>
+																	<AudioFile>HenryBazookaExplosion3.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="468013609"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="HenryBazookaExplosion3" ID="{1C035C2A-9008-4C22-8A45-A8E708EBC3C9}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="HenryBazookaExplosion5" ID="{A173AAC2-11D2-4BCA-891B-C691320B77C5}" ShortID="147178705">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="HenryBazookaExplosion5" ID="{31E23C8F-9A42-491C-B6BF-23C5B85AC670}">
+																	<Language>SFX</Language>
+																	<AudioFile>HenryBazookaExplosion5.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="22202804"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="HenryBazookaExplosion5" ID="{31E23C8F-9A42-491C-B6BF-23C5B85AC670}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="HenryBazookaExplosion1" ID="{0DC01026-CB14-441E-A306-344C1296595B}" ShortID="938092841">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="HenryBazookaExplosion1" ID="{6277DD6F-2571-406D-B01E-418F175BE3CF}">
+																	<Language>SFX</Language>
+																	<AudioFile>HenryBazookaExplosion1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="407809270"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="HenryBazookaExplosion1" ID="{6277DD6F-2571-406D-B01E-418F175BE3CF}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="HenryBazookaExplosion2" ID="{0A72C305-8A75-473E-8F3C-3A5B26C64FA3}" ShortID="1009246643">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="HenryBazookaExplosion2" ID="{3CFD8AF5-FF06-4E55-9DFD-DDCB3F4965E8}">
+																	<Language>SFX</Language>
+																	<AudioFile>HenryBazookaExplosion2.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="74403132"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="HenryBazookaExplosion2" ID="{3CFD8AF5-FF06-4E55-9DFD-DDCB3F4965E8}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+											</ChildrenList>
+										</Folder>
+										<Folder Name="Bomb" ID="{DD026BF3-2C0C-4CD9-B4CD-1F251899CEAF}" ShortID="773572936">
+											<ChildrenList>
+												<Sound Name="HenryBombExplosion2" ID="{C8D835DA-ECEC-4814-95AC-1EC2CA1CFD95}" ShortID="57323600">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryBombExplosion2" ID="{DF244E95-3BB0-4ABD-A100-F9D9D43A7F6D}">
+															<Language>SFX</Language>
+															<AudioFile>HenryBombExplosion2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="367864230"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryBombExplosion2" ID="{DF244E95-3BB0-4ABD-A100-F9D9D43A7F6D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryBombThrow" ID="{D6DBC12F-4E5D-4950-8C05-959F63D16164}" ShortID="739448954">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryBombThrow" ID="{8B0FD6A7-8A51-457C-8F2A-B2DA75CCE29B}">
+															<Language>SFX</Language>
+															<AudioFile>HenryBombThrow.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="773078015"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryBombThrow" ID="{8B0FD6A7-8A51-457C-8F2A-B2DA75CCE29B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryBombExplosion1" ID="{E4C3A26D-622F-4759-A34E-92B12E8F6004}" ShortID="512450100">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryBombExplosion1" ID="{703DCA09-506B-4C08-BB4F-8A06D9D9C72B}">
+															<Language>SFX</Language>
+															<AudioFile>HenryBombExplosion1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="89156181"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryBombExplosion1" ID="{703DCA09-506B-4C08-BB4F-8A06D9D9C72B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</Folder>
+										<Folder Name="Frenzy" ID="{4FD38247-C783-4BC8-BBA1-CD36B95FE170}" ShortID="438787789">
+											<ChildrenList>
+												<Sound Name="HenryFrenzyReady2" ID="{F92FEF2B-B2ED-499C-8C56-A25448D7391D}" ShortID="203856253">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryFrenzyReady2" ID="{AE3E6946-3A1A-4B0D-BC38-4F9E9A8D2F55}">
+															<Language>SFX</Language>
+															<AudioFile>HenryFrenzyReady2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="34678498"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryFrenzyReady2" ID="{AE3E6946-3A1A-4B0D-BC38-4F9E9A8D2F55}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryFrenzyCharge" ID="{4934D11E-44F5-4EDF-83BB-E151F2919170}" ShortID="928931637">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryFrenzyCharge" ID="{D8904809-4E90-4B20-A7C4-EE3E725C8219}">
+															<Language>SFX</Language>
+															<AudioFile>HenryFrenzyCharge.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="451242698"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryFrenzyCharge" ID="{D8904809-4E90-4B20-A7C4-EE3E725C8219}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryFrenzyReady3" ID="{72D28E8E-105D-4512-86A0-5BF47C5569D8}" ShortID="876268305">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryFrenzyReady3" ID="{3C0149F3-096B-434A-A7DA-7630DAFA73CC}">
+															<Language>SFX</Language>
+															<AudioFile>HenryFrenzyReady3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="135818091"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryFrenzyReady3" ID="{3C0149F3-096B-434A-A7DA-7630DAFA73CC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryFrenzyReady1" ID="{05E2BD20-EA50-4BAF-BA98-275AA21FD0DC}" ShortID="781390492">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryFrenzyReady1" ID="{8B74F044-CCE2-4BEA-8DE7-44F72D568FAB}">
+															<Language>SFX</Language>
+															<AudioFile>HenryFrenzyReady1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="325685009"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryFrenzyReady1" ID="{8B74F044-CCE2-4BEA-8DE7-44F72D568FAB}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryFrenzyShockwave" ID="{7B907A4F-8935-4F0E-AE62-9DEECB29805C}" ShortID="1031491911">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryFrenzyShockwave" ID="{0EC956A8-56ED-49D4-9C94-19EE4085369F}">
+															<Language>SFX</Language>
+															<AudioFile>HenryFrenzyShockwave.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="267508732"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryFrenzyShockwave" ID="{0EC956A8-56ED-49D4-9C94-19EE4085369F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</Folder>
+										<Folder Name="Punch" ID="{6223D427-8145-479C-941E-72BF70AAB5DF}" ShortID="499679443">
+											<ChildrenList>
+												<Sound Name="HenryPunchHit4" ID="{F0072EF0-4BDE-4BC0-84E9-7329605A5A5C}" ShortID="383942049">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryPunchHit4" ID="{74428EA8-D934-42E1-BF0F-DD5CCCE328F1}">
+															<Language>SFX</Language>
+															<AudioFile>HenryPunchHit4.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="114974828"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryPunchHit4" ID="{74428EA8-D934-42E1-BF0F-DD5CCCE328F1}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryPunchHit6" ID="{37EE648E-D4AD-4E44-9D9C-A5D6A6674B36}" ShortID="826466887">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryPunchHit6" ID="{425CBFB7-6924-447F-A58A-D9AD7E0EF98B}">
+															<Language>SFX</Language>
+															<AudioFile>HenryPunchHit6.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="314613840"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryPunchHit6" ID="{425CBFB7-6924-447F-A58A-D9AD7E0EF98B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryPunchHit7" ID="{FCF6A5E8-9E79-4B5B-95AD-3E9093E9BC22}" ShortID="829882092">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryPunchHit7" ID="{589D35C1-1A58-4E87-9842-45C398C16CF0}">
+															<Language>SFX</Language>
+															<AudioFile>HenryPunchHit7.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="772366604"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryPunchHit7" ID="{589D35C1-1A58-4E87-9842-45C398C16CF0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryPunchSwing1" ID="{A5C3941B-1C6E-445C-8A41-0985D82E72C0}" ShortID="1038174232">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryPunchSwing1" ID="{78BD8585-A00A-474C-A0AA-3181B97E9859}">
+															<Language>SFX</Language>
+															<AudioFile>HenryPunchSwing1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="519176680"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryPunchSwing1" ID="{78BD8585-A00A-474C-A0AA-3181B97E9859}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryPunchHit5" ID="{E1AC3F40-B41D-466F-98A3-B057801898E4}" ShortID="308073613">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryPunchHit5" ID="{FA325236-1B95-45DE-8DC3-E8CD704B7996}">
+															<Language>SFX</Language>
+															<AudioFile>HenryPunchHit5.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="974822995"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryPunchHit5" ID="{FA325236-1B95-45DE-8DC3-E8CD704B7996}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryPunchHit3" ID="{2CF616E2-B821-4EAF-B7F8-FA493AB72CA2}" ShortID="185244004">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryPunchHit3" ID="{ABA3E563-3047-44DC-AB78-3A92A7459A85}">
+															<Language>SFX</Language>
+															<AudioFile>HenryPunchHit3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="379524197"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryPunchHit3" ID="{ABA3E563-3047-44DC-AB78-3A92A7459A85}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryPunchHit1" ID="{95219D55-523C-4DE2-AC21-69CC9CC47C99}" ShortID="20291957">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryPunchHit1" ID="{64F777EB-5E2A-4A95-9495-764A91A736E3}">
+															<Language>SFX</Language>
+															<AudioFile>HenryPunchHit1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="547270380"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryPunchHit1" ID="{64F777EB-5E2A-4A95-9495-764A91A736E3}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryPunchHit2" ID="{3FFEECE8-454B-4368-B92D-AE013A19F811}" ShortID="391520592">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryPunchHit2" ID="{61600FB6-84D7-46EE-8794-FB99493BEBC8}">
+															<Language>SFX</Language>
+															<AudioFile>HenryPunchHit2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="444661373"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryPunchHit2" ID="{61600FB6-84D7-46EE-8794-FB99493BEBC8}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryPunchSwing3" ID="{66115E13-E06A-4619-9D0C-11F630B321C7}" ShortID="641482327">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryPunchSwing3" ID="{011A67FB-44FF-494D-9984-AF4AC5A749F6}">
+															<Language>SFX</Language>
+															<AudioFile>HenryPunchSwing3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="601970413"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryPunchSwing3" ID="{011A67FB-44FF-494D-9984-AF4AC5A749F6}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryPunchSwing4" ID="{AC20EE2A-0B99-4FB2-965B-3B0669C0510E}" ShortID="316421861">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryPunchSwing4" ID="{EBD41A19-3DE1-4168-977F-EA26730CFAA2}">
+															<Language>SFX</Language>
+															<AudioFile>HenryPunchSwing4.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="698239882"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryPunchSwing4" ID="{EBD41A19-3DE1-4168-977F-EA26730CFAA2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryPunchSwing2" ID="{67F8381A-1C5C-4331-B65E-92A4DE08E20F}" ShortID="1011723317">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryPunchSwing2" ID="{B72E3968-CE30-4919-9C5E-738A900A5712}">
+															<Language>SFX</Language>
+															<AudioFile>HenryPunchSwing2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="947864067"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryPunchSwing2" ID="{B72E3968-CE30-4919-9C5E-738A900A5712}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</Folder>
+										<Folder Name="Guns" ID="{E249804A-3CC3-419F-BCE7-DD48247959E6}" ShortID="542613908">
+											<ChildrenList>
+												<Sound Name="HenryShootShotgun1" ID="{8CBD545E-2A9C-4BE2-A243-92476E8C9660}" ShortID="981276008">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryShootShotgun1" ID="{B0942C27-2CCE-4BA1-A494-AF6F9B42BFEC}">
+															<Language>SFX</Language>
+															<AudioFile>HenryShootShotgun1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="228357819"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryShootShotgun1" ID="{B0942C27-2CCE-4BA1-A494-AF6F9B42BFEC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryShootHandCannon" ID="{9CB6AD70-F076-4B31-9A48-CB9E465FE100}" ShortID="246457130">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryShootHandCannon" ID="{A8F651E4-CB4B-41A4-99A9-6A5B54A46B23}">
+															<Language>SFX</Language>
+															<AudioFile>HenryShootHandCannon.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="31845747"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryShootHandCannon" ID="{A8F651E4-CB4B-41A4-99A9-6A5B54A46B23}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryShootAltPistol" ID="{512AE3D3-385B-4A5D-8D8E-A122CB74FDCA}" ShortID="785217414">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryShootAltPistol" ID="{B021763D-C67F-4A22-8AEB-3640101CD131}">
+															<Language>SFX</Language>
+															<AudioFile>HenryShootAltPistol.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="885922308"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryShootAltPistol" ID="{B021763D-C67F-4A22-8AEB-3640101CD131}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryShootShotgun2" ID="{D68D0316-ADDD-4CE1-955B-2CEBB02D8643}" ShortID="45975404">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryShootShotgun2" ID="{BBE666BE-3639-4D4E-9B6C-D79875BDF8E7}">
+															<Language>SFX</Language>
+															<AudioFile>HenryShootShotgun2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="294453567"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryShootShotgun2" ID="{BBE666BE-3639-4D4E-9B6C-D79875BDF8E7}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryShootUzi" ID="{2F5BC4A4-60F2-42EC-96D5-BE5A1290B021}" ShortID="64590338">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryShootUzi" ID="{BA0C6F20-38D8-48F1-B778-52704B0915BC}">
+															<Language>SFX</Language>
+															<AudioFile>HenryShootUzi.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="956154347"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryShootUzi" ID="{BA0C6F20-38D8-48F1-B778-52704B0915BC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryShootPistol2" ID="{37BD776A-1525-4A63-8560-7DF84C0415F9}" ShortID="525104471">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryShootPistol2" ID="{A92E8DDA-AE42-4A1A-86BA-06483AA9F0D2}">
+															<Language>SFX</Language>
+															<AudioFile>HenryShootPistol2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="153676990"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryShootPistol2" ID="{A92E8DDA-AE42-4A1A-86BA-06483AA9F0D2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryShootPistol1" ID="{413A0F93-2990-44A6-A2F8-FA3E0298146E}" ShortID="324879343">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryShootPistol1" ID="{9353DD8F-B81B-4932-8B12-2953AD1FE403}">
+															<Language>SFX</Language>
+															<AudioFile>HenryShootPistol1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="382388330"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryShootPistol1" ID="{9353DD8F-B81B-4932-8B12-2953AD1FE403}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenryUziReload" ID="{1E2C50FF-E3AE-4E88-9C62-04D7CD7CD76F}" ShortID="976375406">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenryUziReload" ID="{466BD6C5-2962-41BD-BB25-C3CFA1C32620}">
+															<Language>SFX</Language>
+															<AudioFile>HenryUziReload.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="460656225"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenryUziReload" ID="{466BD6C5-2962-41BD-BB25-C3CFA1C32620}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</Folder>
+										<Folder Name="Sword" ID="{1D43E1DF-DAB4-417E-B5CB-3E50D6518F5F}" ShortID="295444929">
+											<ChildrenList>
+												<Sound Name="HenrySwordHit2" ID="{06F372F8-C0FB-4EE1-8F44-5E4A95ABD7B9}" ShortID="793009790">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenrySwordHit2" ID="{C1BF8FB6-B526-437B-9B89-6D1EB8D73C51}">
+															<Language>SFX</Language>
+															<AudioFile>HenrySwordHit2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="799147236"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenrySwordHit2" ID="{C1BF8FB6-B526-437B-9B89-6D1EB8D73C51}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenrySwordSwing" ID="{AFE6CA4F-B4CF-49BB-931B-B32326366974}" ShortID="269344916">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenrySwordSwing" ID="{B116F06E-E556-4318-9A13-B5328A1DEBE1}">
+															<Language>SFX</Language>
+															<AudioFile>HenrySwordSwing.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="904150161"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenrySwordSwing" ID="{B116F06E-E556-4318-9A13-B5328A1DEBE1}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="HenrySwordHit1" ID="{D6F19117-BCE0-446C-A3C6-9FF0E82D831F}" ShortID="1071150405">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Default Attenuation" ID="{AC57C194-5CCA-4F60-A2A3-AF56AC9921BA}" WorkUnitID="{06F11C81-14BB-494E-ADF6-B5F3E1D46CDF}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{144B0D64-860B-4BCF-8FBC-4068D87B1340}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{58F77BF1-1703-4E0F-89E7-4D7EEA6CBB22}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="HenrySwordHit1" ID="{2099843A-C162-4816-A941-254D9285A36E}">
+															<Language>SFX</Language>
+															<AudioFile>HenrySwordHit1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="931039593"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="HenrySwordHit1" ID="{2099843A-C162-4816-A941-254D9285A36E}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</Folder>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Nemry" ID="{13C3B35E-544C-4F02-BB92-99EEE4F8AEE2}" ShortID="124551403"/>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

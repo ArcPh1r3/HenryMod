@@ -157,7 +157,7 @@
   </Target>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="copy /Y &quot;$(ProjectDir)..\HenryUnityProject\AssetBundles\pleasechangethisnameinyourprojectorelseyouwillcauseconflicts&quot; &quot;$(ProjectDir)&quot;" />
+    <Exec Command="copy /Y &quot;$(ProjectDir)..\HenryUnityProject\AssetBundles\pleasechangethisnameinyourprojectorelseyouwillcauseconflicts&quot; &quot;$(ProjectDir)&quot;&#xD;&#xA;copy /Y &quot;$(ProjectDir)..\HenryWwise\GeneratedSoundBanks\Windows\HenryBank.bnk&quot; &quot;$(ProjectDir)&quot;" />
   </Target>
 
 </Project>

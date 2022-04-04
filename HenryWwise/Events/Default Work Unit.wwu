@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" SchemaVersion="97">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="HenryDeath" ID="{348B7F07-B034-4A0B-B960-942C7CBCD875}">
+					<ChildrenList>
+						<Action Name="" ID="{94048414-0F0C-4C99-809C-A46E5949D013}" ShortID="1041206194">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryDeath" ID="{F14BB325-9F0E-44C6-B94A-0A947E862260}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryBazookaExplosion" ID="{FCD639A3-6716-47C6-A373-4B2BF22A24A6}">
+					<ChildrenList>
+						<Action Name="" ID="{A5F2CAAE-EE0A-453D-BED4-1640ED67AE19}" ShortID="623981724">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryBazookaExplosion" ID="{0EFE1C00-1CEE-4BC4-B27D-10F80D60DD09}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryBazookaCharge" ID="{AF8128F6-35E8-40D6-8DAA-AF1A11CCA8A3}">
+					<ChildrenList>
+						<Action Name="" ID="{DF9F8E8B-2CB7-44E6-98FC-D70380119341}" ShortID="205709456">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryBazookaCharge" ID="{E5A7AB4B-A4AF-4C89-BDD9-EA6072FA1762}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryBazookaEquip" ID="{78D7A3ED-66E6-478A-8212-669BA5D16853}">
+					<ChildrenList>
+						<Action Name="" ID="{0067D57E-B1E6-4CAE-B918-61330D2BD9DF}" ShortID="32066366">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryBazookaEquip" ID="{AA1B6D5E-FE52-4AD8-BCE1-0C27304F880B}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryBazookaUnequip" ID="{3FC11B15-078C-4763-8B1C-7919D54FFC0F}">
+					<ChildrenList>
+						<Action Name="" ID="{48AA3AD2-2643-4378-BBDB-0AE7BFE62BBF}" ShortID="252676935">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryBazookaUnequip" ID="{FB004FB4-F910-4B64-A4EA-DDFA4E5EE0C7}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryBazookaFire" ID="{D278C7C1-F615-4FCD-AC00-5DCA5AB9AAC6}">
+					<ChildrenList>
+						<Action Name="" ID="{C3CDF6FE-B7DE-419E-8CC6-D0D3CA073E17}" ShortID="703651999">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryBazookaFire" ID="{F7CA784C-14B9-46DF-9F43-7D797843E8C6}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
