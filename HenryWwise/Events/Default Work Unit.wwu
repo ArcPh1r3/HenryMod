@@ -69,6 +69,215 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="HenryBombExplosion" ID="{EF5AC514-7082-4B49-A51C-DA09B9A6E32F}">
+					<ChildrenList>
+						<Action Name="" ID="{ACED1A28-40FF-4699-8574-3061DE989EC7}" ShortID="947092789">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryBombExplosion" ID="{3B4E5A56-0C22-4B73-A96C-CF367CA4ECE7}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryBombThrow" ID="{106F1205-F681-46D0-AEEE-0C5469ED4867}">
+					<ChildrenList>
+						<Action Name="" ID="{5531E7E2-A50F-4A19-9A59-8C5E22ADB274}" ShortID="144179968">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryBombThrow" ID="{D6DBC12F-4E5D-4950-8C05-959F63D16164}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryFrenzyCharge" ID="{3402A269-D5C7-4BC4-B4C3-241FEE6E3C64}">
+					<ChildrenList>
+						<Action Name="" ID="{84EF863F-BCB4-40B5-A700-4F2483345018}" ShortID="88700071">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryFrenzyCharge" ID="{4934D11E-44F5-4EDF-83BB-E151F2919170}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryFrenzyReady" ID="{E460893F-2B8F-4DAE-8A82-21576709CD8C}">
+					<ChildrenList>
+						<Action Name="" ID="{11F0CA30-2AAB-4082-B633-1BECD6D7B1CE}" ShortID="451830173">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryFrenzyReady" ID="{F0921820-C65C-4A37-ADB4-D6682208834F}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryFrenzyShockwave" ID="{39609E77-EE6D-4B34-A00A-67ED90B163D7}">
+					<ChildrenList>
+						<Action Name="" ID="{F1303E22-C61C-459E-B469-061941615B26}" ShortID="964948463">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryFrenzyShockwave" ID="{7B907A4F-8935-4F0E-AE62-9DEECB29805C}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryShootAltPistol" ID="{72E9B180-E2F2-4846-8BD2-2EA5BEC1F784}">
+					<ChildrenList>
+						<Action Name="" ID="{354814D4-A274-42C3-9DA8-E9AB87A0766F}" ShortID="1007323639">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryShootAltPistol" ID="{512AE3D3-385B-4A5D-8D8E-A122CB74FDCA}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryShootPistol" ID="{E8E6E3DD-0A8C-4926-9512-216DD40D3047}">
+					<ChildrenList>
+						<Action Name="" ID="{CC4DE3B4-1DB4-40BC-9024-1380867184D5}" ShortID="23817762">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryShootPistol" ID="{A242EBB6-7C09-4EBD-B7D3-E4850354D868}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryShootShotgun" ID="{AFB28BFE-8569-48E1-B4AC-0E4715E7DD16}">
+					<ChildrenList>
+						<Action Name="" ID="{35EAC62A-42F3-4FC1-8404-8FA086124E73}" ShortID="362814230">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryShootShotgun" ID="{3ABF2110-1E13-48BE-BE82-A8A1C08FA66E}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryShootUzi" ID="{07FB821B-317C-41AC-AB42-38842ABE87AF}">
+					<ChildrenList>
+						<Action Name="" ID="{3F0D820C-3324-4870-928C-181FCD016934}" ShortID="888493022">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryShootUzi" ID="{2F5BC4A4-60F2-42EC-96D5-BE5A1290B021}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryUziReload" ID="{F674515E-F40A-4FAB-A382-E56376B632B8}">
+					<ChildrenList>
+						<Action Name="" ID="{9574EF9C-C9B4-41A7-A237-0244BA6162EA}" ShortID="206063651">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryUziReload" ID="{1E2C50FF-E3AE-4E88-9C62-04D7CD7CD76F}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryPunchHit" ID="{593FF4C8-AFDF-44E7-A353-49192BE24BEA}">
+					<ChildrenList>
+						<Action Name="" ID="{1DC0DDAB-A53B-44C3-B2A0-672E26E631DE}" ShortID="575420651">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryPunchHit" ID="{1F847DD1-423D-4F76-8CC0-8EB3ECFA814D}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryPunchSwing" ID="{D2FAD6DB-3FCC-4FC9-A108-5CF8D9E9690C}">
+					<ChildrenList>
+						<Action Name="" ID="{68A24E8B-422D-45ED-A80B-E7351784CAA6}" ShortID="39079833">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryPunchSwing" ID="{25BCB9EE-E1CB-42D2-B605-6B4715038447}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenrySwordHit" ID="{F0C6FB45-45E1-48E0-852B-0A393ED9E452}">
+					<ChildrenList>
+						<Action Name="" ID="{2F644E65-A4F7-41F0-83E6-F78F4DCD9FD1}" ShortID="540330223">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenrySwordHit" ID="{901E7888-E0AD-4E0D-B751-BD34E2D1A61A}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenrySwordSwing" ID="{93EDC5FD-EAA9-4D3E-B2E0-0ACAA8B0C647}">
+					<ChildrenList>
+						<Action Name="" ID="{5FDB5AEE-A881-4172-B05F-03E220D5C966}" ShortID="731017546">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenrySwordSwing" ID="{AFE6CA4F-B4CF-49BB-931B-B32326366974}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryDance" ID="{43CDEC6F-E50E-42F2-BE15-0801F80B65F8}">
+					<ChildrenList>
+						<Action Name="" ID="{F8D43D1E-2568-43BD-9D16-E4BBBBFE2878}" ShortID="723045155">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryDance" ID="{49AEC8A9-3E5B-46B5-A057-28C5D2450FFF}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryRoll" ID="{F73AB1B4-7CD6-4204-9D38-8D1788B665C4}">
+					<ChildrenList>
+						<Action Name="" ID="{4DF49FB7-365A-4C3A-ADC5-17372C4C0A47}" ShortID="521208712">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryRoll" ID="{9A3E4AF6-9751-4E6C-A1D8-CB873CD2CF85}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="rulesofnature" ID="{EB5D1AFC-C161-4C1E-A9FF-FEB90A339EDA}">
+					<ChildrenList>
+						<Action Name="" ID="{649468FA-157F-494B-B182-B8903B087DB9}" ShortID="478804775">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="rulesofnature" ID="{F8A7489A-7FA6-49F8-A722-1C5A3C0B1140}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenryStinger" ID="{DDBAA0DB-0FAB-4CDB-8FDF-4C7CA56E4C4D}">
+					<ChildrenList>
+						<Action Name="" ID="{CAEF833F-A7A6-45CE-93F0-F90FF879593C}" ShortID="322387253">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenryStinger" ID="{06B8C122-1633-4A6C-BDAD-26AEE4A87DA9}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HenrySuperSand" ID="{9710CBB7-7900-4113-93AD-8FE9CA50D345}">
+					<ChildrenList>
+						<Action Name="" ID="{1A070D65-18B2-46B5-ACB1-757456760BF1}" ShortID="243136977">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HenrySuperSand" ID="{31592480-9FB9-4D36-B8EC-F653DE08EAAD}" WorkUnitID="{685EA393-C13A-47F6-B3B9-A1F52741F224}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

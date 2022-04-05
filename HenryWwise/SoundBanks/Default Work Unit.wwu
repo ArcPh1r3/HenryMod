@@ -6,8 +6,30 @@
 				<SoundBank Name="HenryBank" ID="{E2BA1CEF-07C4-4351-AB88-6DEAF0723F89}">
 					<ObjectInclusionList>
 						<ObjectRef Name="HenryBazookaCharge" ID="{AF8128F6-35E8-40D6-8DAA-AF1A11CCA8A3}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenrySuperSand" ID="{9710CBB7-7900-4113-93AD-8FE9CA50D345}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryShootUzi" ID="{07FB821B-317C-41AC-AB42-38842ABE87AF}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryRoll" ID="{F73AB1B4-7CD6-4204-9D38-8D1788B665C4}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryDance" ID="{43CDEC6F-E50E-42F2-BE15-0801F80B65F8}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryPunchHit" ID="{593FF4C8-AFDF-44E7-A353-49192BE24BEA}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryBombThrow" ID="{106F1205-F681-46D0-AEEE-0C5469ED4867}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryBazookaUnequip" ID="{3FC11B15-078C-4763-8B1C-7919D54FFC0F}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryBazookaEquip" ID="{78D7A3ED-66E6-478A-8212-669BA5D16853}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="HenryBazookaExplosion" ID="{FCD639A3-6716-47C6-A373-4B2BF22A24A6}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryShootAltPistol" ID="{72E9B180-E2F2-4846-8BD2-2EA5BEC1F784}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenrySwordHit" ID="{F0C6FB45-45E1-48E0-852B-0A393ED9E452}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryShootShotgun" ID="{AFB28BFE-8569-48E1-B4AC-0E4715E7DD16}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryShootPistol" ID="{E8E6E3DD-0A8C-4926-9512-216DD40D3047}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="HenryDeath" ID="{348B7F07-B034-4A0B-B960-942C7CBCD875}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryFrenzyShockwave" ID="{39609E77-EE6D-4B34-A00A-67ED90B163D7}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryBombExplosion" ID="{EF5AC514-7082-4B49-A51C-DA09B9A6E32F}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryFrenzyCharge" ID="{3402A269-D5C7-4BC4-B4C3-241FEE6E3C64}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="rulesofnature" ID="{EB5D1AFC-C161-4C1E-A9FF-FEB90A339EDA}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryStinger" ID="{DDBAA0DB-0FAB-4CDB-8FDF-4C7CA56E4C4D}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenrySwordSwing" ID="{93EDC5FD-EAA9-4D3E-B2E0-0ACAA8B0C647}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryFrenzyReady" ID="{E460893F-2B8F-4DAE-8A82-21576709CD8C}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryUziReload" ID="{F674515E-F40A-4FAB-A382-E56376B632B8}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryPunchSwing" ID="{D2FAD6DB-3FCC-4FC9-A108-5CF8D9E9690C}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HenryBazookaFire" ID="{D278C7C1-F615-4FCD-AC00-5DCA5AB9AAC6}" WorkUnitID="{D04CA493-EDE7-460D-9447-EDEEAC204E46}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
