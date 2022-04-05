@@ -14,7 +14,9 @@ namespace HenryMod.Modules
         {
             ItemDisplayRuleSet itemDisplayRuleSet = Resources.Load<GameObject>("Prefabs/CharacterBodies/CommandoBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().itemDisplayRuleSet;
 
-            ItemDisplayRuleSet.KeyAssetRuleGroup[] item = itemDisplayRuleSet.keyAssetRuleGroups;
+            ItemDisplayRuleSet.KeyAssetRuleGroup[] item = itemDisplayRuleSet?.keyAssetRuleGroups;
+            if (item == null)
+                return;
 
             for (int i = 0; i < item.Length; i++)
             {

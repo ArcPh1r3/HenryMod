@@ -129,25 +129,25 @@ namespace HenryMod.Modules {
 
         internal static NemryEnergySkillDef CreateEnergySkillDef(SkillDefInfo skillDefInfo) {
 
-            NemryEnergySkillDef skillDef = CreateSkillDef<NemryEnergySkillDef>(skillDefInfo) as NemryEnergySkillDef;
+            NemryEnergySkillDef skillDef = CreateSkillDef<NemryEnergySkillDef>(skillDefInfo);
 
             return skillDef;
         }
         internal static HenryFurySkillDef CreateFurySkillDef(SkillDefInfo skillDefInfo) {
 
-            HenryFurySkillDef skillDef = CreateSkillDef<HenryFurySkillDef>(skillDefInfo) as HenryFurySkillDef;
+            HenryFurySkillDef skillDef = CreateSkillDef<HenryFurySkillDef>(skillDefInfo);
 
             return skillDef;
         }
         internal static TrackingEnergySkillDef CreateTrackingEnergySkillDef(SkillDefInfo skillDefInfo) {
 
-            TrackingEnergySkillDef skillDef = CreateSkillDef<TrackingEnergySkillDef>(skillDefInfo) as TrackingEnergySkillDef;
+            TrackingEnergySkillDef skillDef = CreateSkillDef<TrackingEnergySkillDef>(skillDefInfo);
 
             return skillDef;
         }
         internal static HenryTrackingSkillDef CreateTrackingSkillDef(SkillDefInfo skillDefInfo) {
             
-            HenryTrackingSkillDef skillDef = CreateSkillDef<HenryTrackingSkillDef>(skillDefInfo) as HenryTrackingSkillDef;
+            HenryTrackingSkillDef skillDef = CreateSkillDef<HenryTrackingSkillDef>(skillDefInfo);
 
             return skillDef;
         }
@@ -179,8 +179,6 @@ namespace HenryMod.Modules {
 
             skillDef.keywordTokens = skillDefInfo.keywordTokens;
         }
-
-
 
         internal static SkillDef CreatePrimarySkillDef(SerializableEntityStateType state, string stateMachine, string skillNameToken, string skillDescriptionToken, Sprite skillIcon, bool agile) {
             SkillDef skillDef = ScriptableObject.CreateInstance<SkillDef>();

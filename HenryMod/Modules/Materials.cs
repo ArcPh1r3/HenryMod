@@ -110,7 +110,10 @@ namespace HenryMod.Modules {
         }
 
         public static Material SetEmission(this Material material) => SetEmission(material, 1);
-        public static Material SetEmission(this Material material, float emission) => SetEmission(material, emission, Color.white);
+        public static Material SetEmission(this Material material, float emission) {
+            material.SetFloat("_EmPower", emission);
+            return material;
+        }
         public static Material SetEmission(this Material material, float emission, Color emissionColor) {
             material.SetFloat("_EmPower", emission);
             material.SetColor("_EmColor", emissionColor);

@@ -17,9 +17,9 @@ namespace HenryMod.Modules
 
         internal static void RegisterBuffs()
         {
-            armorBuff = AddNewBuff("HenryArmorBuff", Resources.Load<Sprite>("Textures/BuffIcons/texBuffGenericShield"), Color.white, false, false);
-            frenzyBuff = AddNewBuff("HenryFrenzyBuff", Resources.Load<Sprite>("Textures/BuffIcons/texBuffBanditSkullIcon"), Color.red, false, false);
-            frenzyScepterBuff = AddNewBuff("HenryFrenzyScepterBuff", Resources.Load<Sprite>("Textures/BuffIcons/texBuffBanditSkullIcon"), Color.yellow, false, false);
+            armorBuff = AddNewBuff("HenryArmorBuff", LegacyResourcesAPI.Load<BuffDef>("BuffDefs/HiddenInvincibility").iconSprite, Color.white, false, false);
+            frenzyBuff = AddNewBuff("HenryFrenzyBuff", LegacyResourcesAPI.Load<BuffDef>("BuffDefs/BanditSkull").iconSprite, Color.red, false, false);
+            frenzyScepterBuff = AddNewBuff("HenryFrenzyScepterBuff", LegacyResourcesAPI.Load<BuffDef>("BuffDefs/BanditSkull").iconSprite, Color.yellow, false, false);
         }
 
         // simple helper method

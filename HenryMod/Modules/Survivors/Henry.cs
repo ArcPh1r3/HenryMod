@@ -480,6 +480,7 @@ namespace HenryMod.Modules.Survivors
                 stockToConsume = 1
             });
 
+
             bazookaFireSkillDefScepter = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_HENRY_BODY_PRIMARY_SCEPBAZOOKA_NAME",
@@ -857,25 +858,27 @@ namespace HenryMod.Modules.Survivors
             skins.Add(danteSkin);
             #endregion
 
-            #region samuraiSkin
+            if (Config.ExtraSkins.Value) {
 
-            CharacterModel.RendererInfo[] samuraiRendererInfos = SkinRendererInfos(defaultRendererInfos, new Material[]
-            {
+                #region samuraiSkin
+
+                CharacterModel.RendererInfo[] samuraiRendererInfos = SkinRendererInfos(defaultRendererInfos, new Material[]
+                {
                 Materials.CreateHotpooMaterial("matKatana"),
                 null,
                 null,
                 null,
                 Materials.CreateHotpooMaterial("matSamuraiOutfit")
-            });
+                });
 
-            SkinDef samuraiSkin = Modules.Skins.CreateSkinDef(HenryPlugin.developerPrefix + "_HENRY_BODY_SAMURAI_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texSkinSamurai"),
-                samuraiRendererInfos,
-                mainRenderer,
-                model);
+                SkinDef samuraiSkin = Modules.Skins.CreateSkinDef(HenryPlugin.developerPrefix + "_HENRY_BODY_SAMURAI_SKIN_NAME",
+                    Assets.mainAssetBundle.LoadAsset<Sprite>("texSkinSamurai"),
+                    samuraiRendererInfos,
+                    mainRenderer,
+                    model);
 
-            samuraiSkin.meshReplacements = new SkinDef.MeshReplacement[]
-            {
+                samuraiSkin.meshReplacements = new SkinDef.MeshReplacement[]
+                {
                 new SkinDef.MeshReplacement
                 {
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshKatana"),
@@ -891,10 +894,10 @@ namespace HenryMod.Modules.Survivors
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshStickman"),
                     renderer = defaultRendererInfos[instance.mainRendererIndex].renderer
                 }
-            };
-            
-            samuraiSkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
-            {
+                };
+
+                samuraiSkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
+                {
                 new SkinDef.GameObjectActivation
                 {
                     gameObject = outfitObject,
@@ -910,30 +913,30 @@ namespace HenryMod.Modules.Survivors
                     gameObject = swordTrail,
                     shouldActivate = false
                 }
-            };
+                };
 
-            skins.Add(samuraiSkin);
-            #endregion
+                skins.Add(samuraiSkin);
+                #endregion
 
-            #region soldierSkin
+                #region soldierSkin
 
-            CharacterModel.RendererInfo[] soldierRendererInfos = SkinRendererInfos(defaultRendererInfos, new Material[]
-            {
+                CharacterModel.RendererInfo[] soldierRendererInfos = SkinRendererInfos(defaultRendererInfos, new Material[]
+                {
                 Materials.CreateHotpooMaterial("matIronAxe"),
                 null,
                 null,
                 null,
                 Materials.CreateHotpooMaterial("matSoldierOutfit")
-            });
+                });
 
-            SkinDef soldierSkin = Modules.Skins.CreateSkinDef(HenryPlugin.developerPrefix + "_HENRY_BODY_SOLDIER_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texSkinSoldier"),
-                soldierRendererInfos,
-                mainRenderer,
-                model);
+                SkinDef soldierSkin = Modules.Skins.CreateSkinDef(HenryPlugin.developerPrefix + "_HENRY_BODY_SOLDIER_SKIN_NAME",
+                    Assets.mainAssetBundle.LoadAsset<Sprite>("texSkinSoldier"),
+                    soldierRendererInfos,
+                    mainRenderer,
+                    model);
 
-            soldierSkin.meshReplacements = new SkinDef.MeshReplacement[]
-            {
+                soldierSkin.meshReplacements = new SkinDef.MeshReplacement[]
+                {
                 new SkinDef.MeshReplacement
                 {
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshIronAxe"),
@@ -949,10 +952,10 @@ namespace HenryMod.Modules.Survivors
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshStickman"),
                     renderer = defaultRendererInfos[instance.mainRendererIndex].renderer
                 }
-            };
+                };
 
-            soldierSkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
-            {
+                soldierSkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
+                {
                 new SkinDef.GameObjectActivation
                 {
                     gameObject = outfitObject,
@@ -968,28 +971,28 @@ namespace HenryMod.Modules.Survivors
                     gameObject = swordTrail,
                     shouldActivate = false
                 }
-            };
+                };
 
-            skins.Add(soldierSkin);
-            #endregion
+                skins.Add(soldierSkin);
+                #endregion
 
-            #region zombieSkin
+                #region zombieSkin
 
-            CharacterModel.RendererInfo[] zombieRendererInfos = SkinRendererInfos(defaultRendererInfos, new Material[]
-            {
+                CharacterModel.RendererInfo[] zombieRendererInfos = SkinRendererInfos(defaultRendererInfos, new Material[]
+                {
                 Materials.CreateHotpooMaterial("matZombie").SetEmission(3),
                 null,
                 Materials.CreateHotpooMaterial("matZombie").SetEmission(3)
-            });
+                });
 
-            SkinDef zombieSkin = Modules.Skins.CreateSkinDef(HenryPlugin.developerPrefix + "_HENRY_BODY_ZOMBIE_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texSkinZombie"),
-                zombieRendererInfos,
-                mainRenderer,
-                model);
+                SkinDef zombieSkin = Modules.Skins.CreateSkinDef(HenryPlugin.developerPrefix + "_HENRY_BODY_ZOMBIE_SKIN_NAME",
+                    Assets.mainAssetBundle.LoadAsset<Sprite>("texSkinZombie"),
+                    zombieRendererInfos,
+                    mainRenderer,
+                    model);
 
-            zombieSkin.meshReplacements = new SkinDef.MeshReplacement[]
-            {
+                zombieSkin.meshReplacements = new SkinDef.MeshReplacement[]
+                {
                 new SkinDef.MeshReplacement
                 {
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshZombieClaw"),
@@ -1005,10 +1008,10 @@ namespace HenryMod.Modules.Survivors
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshZombie"),
                     renderer = defaultRendererInfos[instance.mainRendererIndex].renderer
                 }
-            };
+                };
 
-            zombieSkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
-            {
+                zombieSkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
+                {
                 new SkinDef.GameObjectActivation
                 {
                     gameObject = outfitObject,
@@ -1024,28 +1027,28 @@ namespace HenryMod.Modules.Survivors
                     gameObject = swordTrail,
                     shouldActivate = false
                 }
-            };
+                };
 
-            skins.Add(zombieSkin);
-            #endregion
+                skins.Add(zombieSkin);
+                #endregion
 
-            #region skeletonSkin
+                #region skeletonSkin
 
-            CharacterModel.RendererInfo[] skeletonRendererInfos = SkinRendererInfos(defaultRendererInfos, new Material[]
-            {
+                CharacterModel.RendererInfo[] skeletonRendererInfos = SkinRendererInfos(defaultRendererInfos, new Material[]
+                {
                 Materials.CreateHotpooMaterial("matSkeleton").SetEmission(3),
                 null,
                 Materials.CreateHotpooMaterial("matScimitar")
-            });
+                });
 
-            SkinDef skeletonSkin = Modules.Skins.CreateSkinDef(HenryPlugin.developerPrefix + "_HENRY_BODY_SKELETON_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texSkinSkeleton"),
-                skeletonRendererInfos,
-                mainRenderer,
-                model);
+                SkinDef skeletonSkin = Modules.Skins.CreateSkinDef(HenryPlugin.developerPrefix + "_HENRY_BODY_SKELETON_SKIN_NAME",
+                    Assets.mainAssetBundle.LoadAsset<Sprite>("texSkinSkeleton"),
+                    skeletonRendererInfos,
+                    mainRenderer,
+                    model);
 
-            skeletonSkin.meshReplacements = new SkinDef.MeshReplacement[]
-            {
+                skeletonSkin.meshReplacements = new SkinDef.MeshReplacement[]
+                {
                 new SkinDef.MeshReplacement
                 {
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshScimitar"),
@@ -1061,10 +1064,10 @@ namespace HenryMod.Modules.Survivors
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshSkeleton"),
                     renderer = defaultRendererInfos[instance.mainRendererIndex].renderer
                 }
-            };
+                };
 
-            skeletonSkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
-            {
+                skeletonSkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
+                {
                 new SkinDef.GameObjectActivation
                 {
                     gameObject = outfitObject,
@@ -1080,11 +1083,11 @@ namespace HenryMod.Modules.Survivors
                     gameObject = swordTrail,
                     shouldActivate = false
                 }
-            };
+                };
 
-            skins.Add(skeletonSkin);
-            #endregion
-
+                skins.Add(skeletonSkin);
+                #endregion
+            }
             skinController.skins = skins.ToArray();
         }
         
