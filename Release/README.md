@@ -19,7 +19,7 @@ hey it's me again
 [![](https://cdn.discordapp.com/attachments/469291841859092488/807476979061489664/texHenryIcon.png)]()
 
 join the discord to share feedback: https://discord.gg/Xacmgm7KXM  
-ping me (TheTimesweeper#5727) for any issues you find.
+ping me (TheTimesweeper#5727) with any questions or issues you find.
 
 ## Tutorial
 
