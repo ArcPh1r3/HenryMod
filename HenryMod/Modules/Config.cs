@@ -15,7 +15,7 @@ namespace HenryMod.Modules {
             ExtraSkins
                 = HenryPlugin.instance.Config.Bind<bool>("Henry", 
                                                          "Extra Skins",
-                                                         true,
+                                                         false,
                                                          "A gift from rob. Enable extra skins from the game he's workin on.");
 
             rampageEffects = HenryPlugin.instance.Config.Bind<bool>(new ConfigDefinition("Visuals", "Rampage VFX"), true, new ConfigDescription("Enable Rampage visual effects"));
