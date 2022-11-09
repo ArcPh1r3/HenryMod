@@ -1,4 +1,5 @@
 ﻿using BepInEx.Configuration;
+using R2API;
 using RoR2;
 using RoR2.Skills;
 using System;
@@ -64,7 +65,7 @@ namespace HenryMod.Modules.Survivors
 
         internal override void InitializeUnlockables()
         {
-            characterUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.HenryUnlockAchievement>(true);
+            characterUnlockableDef = UnlockableAPI.AddUnlockable<Achievements.HenryUnlockAchievement>();
         }
 
         private static void CreateDoppelganger()

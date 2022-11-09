@@ -168,7 +168,7 @@ namespace HenryMod.Modules
 
             muzzleFlashEnergy = LoadEffect("NemryMuzzleFlashEnergy", true);
             minibossEffect = mainAssetBundle.LoadAsset<GameObject>("NemryMinibossIndicator");
-
+            
             swordChargeFinishEffect = LoadEffect("SwordChargeFinishEffect");
             swordChargeEffect = mainAssetBundle.LoadAsset<GameObject>("SwordChargeEffect");
 

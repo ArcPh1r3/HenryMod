@@ -29,6 +29,7 @@ namespace HenryMod.Modules
             survivorDef.bodyPrefab = bodyPrefab;
             survivorDef.displayPrefab = displayPrefab;
             survivorDef.primaryColor = charColor;
+            survivorDef.cachedName = bodyPrefab.name.Replace("Body", "");
             survivorDef.displayNameToken = fullNameString;
             survivorDef.descriptionToken = fullDescString;
             survivorDef.outroFlavorToken = fullOutroString;

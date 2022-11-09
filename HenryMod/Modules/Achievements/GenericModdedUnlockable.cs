@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using RoR2;
-using HenryMod.Modules;
+using R2API;
 
 namespace HenryMod.Modules.Achievements {
     internal abstract class GenericModdedUnlockable : ModdedUnlockable

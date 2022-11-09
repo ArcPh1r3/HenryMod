@@ -8,14 +8,6 @@ namespace HenryMod.Modules.Achievements {
     {
         public abstract string RequiredCharacterBody { get; }
         public abstract float RequiredDifficultyCoefficient { get;}
-        //public CharacterBody RequiredCharacterBody { get; }
-
-        //not sure if we use constructors
-        //public GenericMasteryAchievement(float requiredDifficultyCoef, CharacterBody requiredCharBody)
-        //{
-        //    RequiredDifficultyCoefficient = requiredDifficultyCoef;
-        //    RequiredCharacterBody = requiredCharBody;
-        //}
 
         public override void OnBodyRequirementMet()
         {
@@ -34,7 +26,9 @@ namespace HenryMod.Modules.Achievements {
                 DifficultyIndex difficultyIndex = runReport.ruleBook.FindDifficulty();
                 DifficultyDef runDifficulty = DifficultyCatalog.GetDifficultyDef(runReport.ruleBook.FindDifficulty());
 
-                if ((runDifficulty.countsAsHardMode && runDifficulty.scalingValue >= RequiredDifficultyCoefficient || (difficultyIndex >= DifficultyIndex.Eclipse1 && difficultyIndex <= DifficultyIndex.Eclipse8))) {
+                if ((runDifficulty.countsAsHardMode && runDifficulty.scalingValue >= RequiredDifficultyCoefficient) ||
+                    (difficultyIndex >= DifficultyIndex.Eclipse1 && difficultyIndex <= DifficultyIndex.Eclipse8) ||
+                    (runDifficulty.nameToken == "INFERNO_NAME")) {
                     Grant();
                 }
             }

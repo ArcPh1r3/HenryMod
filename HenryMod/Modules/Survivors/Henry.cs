@@ -1,4 +1,5 @@
 ﻿using BepInEx.Configuration;
+using R2API;
 using RoR2;
 using RoR2.Skills;
 using RoR2.UI;
@@ -135,13 +136,13 @@ namespace HenryMod.Modules.Survivors
             On.RoR2.UI.HUD.Awake += HUDAwake;
         }
 
-        internal override void InitializeUnlockables()
+        internal override void InitializeUnlockables() 
         {
-            characterUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.HenryUnlockAchievement>(true);
-            masterySkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.MasteryAchievement>(true);
-            grandMasterySkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.GrandMasteryAchievement>(true);
-            danteSkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.DanteAchievement>(true);
-            vergilSkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.VergilAchievement>(true);
+            characterUnlockableDef = UnlockableAPI.AddUnlockable<Achievements.HenryUnlockAchievement>();
+            masterySkinUnlockableDef = UnlockableAPI.AddUnlockable<Achievements.MasteryAchievement>();
+            grandMasterySkinUnlockableDef = UnlockableAPI.AddUnlockable<Achievements.GrandMasteryAchievement>();
+            danteSkinUnlockableDef = UnlockableAPI.AddUnlockable<Achievements.DanteAchievement>();
+            vergilSkinUnlockableDef = UnlockableAPI.AddUnlockable<Achievements.VergilAchievement>();
         }
 
         internal override void InitializeDoppelganger()
@@ -161,6 +162,7 @@ namespace HenryMod.Modules.Survivors
             Modules.Prefabs.SetupHitbox(model, hitboxTransform, "Punch");
         }
 
+        #region skills
         internal override void InitializeSkills()
         {
             Modules.Skills.CreateSkillFamilies(bodyPrefab);
@@ -564,6 +566,7 @@ namespace HenryMod.Modules.Survivors
             AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(bazookaSkillDef, instance.fullBodyName, SkillSlot.Special, 1);
             AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(frenzySkillDef, instance.fullBodyName, SkillSlot.Special, 2);
         }
+        #endregion skills
 
         internal override void InitializeSkins()
         {
@@ -857,6 +860,65 @@ namespace HenryMod.Modules.Survivors
 
             skins.Add(danteSkin);
             #endregion
+
+            #region legitSkin
+            //Material legitMat = Modules.Assets.CreateMaterial("matHenryNeo");
+            //CharacterModel.RendererInfo[] legitRendererInfos = SkinRendererInfos(defaultRendererInfos, new Material[]
+            //{
+            //    legitMat,
+            //    legitMat,
+            //    legitMat,
+            //    legitMat
+            //});
+
+            //SkinDef legitSkin = Modules.Skins.CreateSkinDef(HenryPlugin.developerPrefix + "_HENRY_BODY_LEGIT_SKIN_NAME",
+            //    Assets.mainAssetBundle.LoadAsset<Sprite>("texlegitAchievement"),
+            //    legitRendererInfos,
+            //    mainRenderer,
+            //    model,
+            //    null); //legitSkinUnlockableDef);
+
+            //legitSkin.meshReplacements = new SkinDef.MeshReplacement[]
+            //{
+            //new SkinDef.MeshReplacement
+            //{
+            //    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenrySword"),
+            //    renderer = defaultRendererInfos[0].renderer
+            //},
+            //new SkinDef.MeshReplacement
+            //{
+            //    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenryNeo"),
+            //    renderer = defaultRendererInfos[instance.mainRendererIndex].renderer
+            //},
+            //new SkinDef.MeshReplacement
+            //{
+            //    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshNeoCoat"),
+            //    renderer = defaultRendererInfos[4].renderer
+            //}
+            //};
+
+            //legitSkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
+            //{
+            //    new SkinDef.GameObjectActivation
+            //    {
+            //        gameObject = outfitObject,
+            //        shouldActivate = false
+            //    },
+            //new SkinDef.GameObjectActivation
+            //{
+            //    gameObject = coatObject,
+            //    shouldActivate = false
+            //},
+            //new SkinDef.GameObjectActivation
+            //{
+            //    gameObject = swordTrail,
+            //    shouldActivate = false
+            //}
+            //};
+
+            //skins.Add(legitSkin);
+
+            #endregion legitskin
 
             if (Config.ExtraSkins.Value) {
 

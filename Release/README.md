@@ -1,83 +1,95 @@
-## HenryMod
+# HenryMod
 - Adds Henry, a stickman who fights with a combination of sword and gun
 - Designed primarily to use as a base for creating your own custom characters, codebase is modular and easy to understand while easily supporting multiple characters and even enemies eventually- in other words, Example Survivor 2
 - Has a bunch of alternate skills and unlockable skins
 
 [![](https://cdn.discordapp.com/attachments/469291841859092488/815574716630695946/unknown.png)]()
 
-## Update for SotV
-hey it's me again
- ___
-[![](https://cdn.discordapp.com/attachments/469291841859092488/820409781525020692/unknown.png)]()
-
-[![](https://cdn.discordapp.com/attachments/469291841859092488/820410229438677022/unknown.png)]()
-
-[![](https://cdn.discordapp.com/attachments/759508646966591528/826794352520986684/unknown.png)]()
-
-[![](https://cdn.discordapp.com/attachments/469291841859092488/820412588751323146/unknown.png)]()
+[![](https://raw.githubusercontent.com/ArcPh1r3/HenryMod/main/Release/Readme/screens1.png)]()
+[![](https://raw.githubusercontent.com/ArcPh1r3/HenryMod/main/Release/Readme/screens2.png)]()
 
 [![](https://cdn.discordapp.com/attachments/469291841859092488/807476979061489664/texHenryIcon.png)]()
 
-join the discord to share feedback: https://discord.gg/Xacmgm7KXM  
-ping me (TheTimesweeper#5727) with any questions or issues you find.
+join the discord to share feedback: https://discord.gg/Xacmgm7KXM
 
 ## Tutorial
 
-In-depth character creation tutorial can be found here: https://github.com/ArcPh1r3/HenryTutorial/blob/master/README.md
+In-depth character creation tutorial can be found here: https://github.com/ArcPh1r3/HenryTutorial/blob/master/README.md  
+This tutorial is fixed to work with the current update, and will be maintained.
 
+## Survivors of the Void Update
+Henry is back!  
+
+In the update for SotV some things were cut for now (namely nemry), and some things might be missing or a little off (namely sound and camera stuff). Let me know in the discord link above if you come across any of this.  
+Aside from that, gameplay wise he's back up and running.
+
+Also, as a gift from rob: 
+[![](https://raw.githubusercontent.com/ArcPh1r3/HenryMod/main/Release/Readme/screens3Skins.png)]()
+These skins are outfits and enemies from the game rob's been working on since he left ror2 modding. Enable them in config "Extra Skins".
+
+Check out his game via his youtube channel here:  
+[![epic game development](http://img.youtube.com/vi/TN9A5lcT_hc/0.jpg)](http://www.youtube.com/watch?v=TN9A5lcT_hc)
+
+Thanks for stickin around, have fun, love ya - Timesweeper
 
 ## Skills
 
 #### Primary
 
-[![](https://cdn.discordapp.com/attachments/469291841859092488/826844941706854460/unknown.png)]()
-
-[![](https://cdn.discordapp.com/attachments/469291841859092488/826843527089881088/unknown.png)]()
-
-[![](https://cdn.discordapp.com/attachments/469291841859092488/826843622326534214/unknown.png)]()
+[![](https://cdn.discordapp.com/attachments/469291841859092488/826844941706854460/unknown.png)]()  
+[![](https://cdn.discordapp.com/attachments/469291841859092488/826843527089881088/unknown.png)]()  
+[![](https://cdn.discordapp.com/attachments/469291841859092488/826843622326534214/unknown.png)]()  
 
 #### Secondary
 
-[![](https://cdn.discordapp.com/attachments/469291841859092488/826843434664067133/unknown.png)]()
-
-[![](https://cdn.discordapp.com/attachments/469291841859092488/826843546274758706/unknown.png)]()
-
-[![](https://cdn.discordapp.com/attachments/469291841859092488/826843647613337640/unknown.png)]()
+[![](https://cdn.discordapp.com/attachments/469291841859092488/826843434664067133/unknown.png)]()  
+[![](https://cdn.discordapp.com/attachments/469291841859092488/826843546274758706/unknown.png)]()  
+[![](https://cdn.discordapp.com/attachments/469291841859092488/826843647613337640/unknown.png)]()  
 
 #### Utility
 
-[![](https://cdn.discordapp.com/attachments/469291841859092488/826843457137803304/unknown.png)]()
-
+[![](https://cdn.discordapp.com/attachments/469291841859092488/826843457137803304/unknown.png)]()  
 [![](https://cdn.discordapp.com/attachments/469291841859092488/826843568357376030/unknown.png)]()
 
 #### Special
 
-[![](https://cdn.discordapp.com/attachments/469291841859092488/826843480089296956/unknown.png)]()
-
-[![](https://cdn.discordapp.com/attachments/469291841859092488/826843588474044426/unknown.png)]()
-
+[![](https://cdn.discordapp.com/attachments/469291841859092488/826843480089296956/unknown.png)]()  
+[![](https://cdn.discordapp.com/attachments/469291841859092488/826843588474044426/unknown.png)]()  
 [![](https://cdn.discordapp.com/attachments/469291841859092488/830875746431008818/unknown.png)]()
 
 
-## Ancient Scepter
+#### Ancient Scepter
 
 * Bomb > More Bombs! | Cooldown is halved and carry capacity is increased to 4
 * Bazooka > Armageddon | Fire two Bazookas at once
 * Rampage > Super Saiyan | Become real Super Sand
 
 ## Credits
-PapaZach- Skill icons
-OK - Mod icon
-Rein - A ton of help getting things up and running again
+rob - everything  
+PapaZach- Skill icons  
+OK - Mod icon  
+Rein - A ton of help getting things up and running again  
+TheTimesweeper - Gupdate fix and maintaining  
 ~~Linkin Park - Music~~
-TheTimesweeper - fix for gupdate and maintaining
 
 ## Changelog
+
+`2.1.2`
+ - grandmastery now achievable with eclipse and inferno
+ - fixed eclipse not saving progress
+
+`2.1.1`
+ - moved unlockable code to r2api, fixing achievement issue with recent update 
+ - fixed achievements in logbook marked as ??? even with henry unlocked
+
 `2.1.0`
-- Updated for survivors of the void
+- Fixed for survivors of the void
   - secret character removed for now
   - sounds had to be redone, may be too loud/quiet in some places
   - let me know if any other issues arise
+- Added 4 new skins in config, courtesy of rob and the game he's working on.
+- made melee hitboxes consistently face foward while sprinting, making these attacks more consistent while sprinting sideways
+- more things that I'm forgetting I'm sure
 
 `2.0.0`
 - Updated some skill effects

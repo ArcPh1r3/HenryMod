@@ -1,10 +1,10 @@
 {
     "name": "HenryMod",
-    "version_number": "2.1.0",
+    "version_number": "2.1.2",
     "website_url": "https://github.com/ArcPh1r3/HenryTutorial",
-    "description": "Adds Henry, a melee/ranged hybrid who uses a wide arsenal of weaponry. Featuring Dante from the Devil May Cry series!",
+    "description": "Adds Henry, a melee/ranged hybrid who uses a wide arsenal of weaponry. Originally by rob, maintained by me.",
     "dependencies": [
-        "bbepis-BepInExPack-5.4.1902",
-        "tristanmcpherson-R2API-4.3.2"
+        "bbepis-BepInExPack-5.4.1905",
+        "tristanmcpherson-R2API-4.3.21"
     ]
 }

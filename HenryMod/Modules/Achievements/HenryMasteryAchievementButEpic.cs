@@ -3,7 +3,7 @@
     internal class GrandMasteryAchievement : BaseMasteryUnlockable
     {
         public override string AchievementTokenPrefix => HenryPlugin.developerPrefix + "_HENRY_BODY_TYPHOON";
-        public override string PrerequisiteUnlockableIdentifier => HenryPlugin.developerPrefix + "_HENRY_BODY_UNLOCKABLE_REWARD_ID";
+        public override string PrerequisiteUnlockableIdentifier => HenryPlugin.developerPrefix + "_HENRY_BODY_UNLOCKABLE_ACHIEVEMENT_ID";
         public override string AchievementSpriteName => "texGrandMasteryAchievement";
         
         public override string RequiredCharacterBody => "HenryBody";
@@ -14,7 +14,7 @@
     internal class MasteryAchievement : BaseMasteryUnlockable
     {
         public override string AchievementTokenPrefix => HenryPlugin.developerPrefix + "_HENRY_BODY_MASTERY";
-        public override string PrerequisiteUnlockableIdentifier => "_HENRY_BODY_UNLOCKABLE_REWARD_ID";
+        public override string PrerequisiteUnlockableIdentifier => HenryPlugin.developerPrefix + "_HENRY_BODY_UNLOCKABLE_ACHIEVEMENT_ID";
         public override string AchievementSpriteName => "texMasteryAchievement";
 
         public override string RequiredCharacterBody => "HenryBody";

@@ -21,13 +21,14 @@ namespace HenryMod
         "PrefabAPI",
         "LanguageAPI",
         "SoundAPI",
+        "UnlockableAPI",
     })]
 
     public class HenryPlugin : BaseUnityPlugin
     {
         public const string MODUID = "com.rob.HenryMod";
         public const string MODNAME = "HenryMod";
-        public const string MODVERSION = "2.1.0";
+        public const string MODVERSION = "2.1.2";
 
         // a prefix for name tokens to prevent conflicts
         public const string developerPrefix = "ROB";

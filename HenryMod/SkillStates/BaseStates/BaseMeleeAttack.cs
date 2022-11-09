@@ -53,7 +53,7 @@ namespace HenryMod.SkillStates.BaseStates
             this.earlyExitTime = this.baseEarlyExitTime / this.attackSpeedStat;
             this.hasFired = false;
             this.animator = base.GetModelAnimator();
-            base.StartAimMode(0.5f + this.duration, false);
+            //base.StartAimMode(0.5f + this.duration, false);
             base.characterBody.outOfCombatStopwatch = 0f;
             this.animator.SetBool("attacking", true);
 
@@ -158,10 +158,12 @@ namespace HenryMod.SkillStates.BaseStates
                 swingIndex = index
             });
         }
-
+        
         public override void FixedUpdate()
         {
             base.FixedUpdate();
+
+            base.StartAimMode(0.5f);
 
             this.hitPauseTimer -= Time.fixedDeltaTime;
 

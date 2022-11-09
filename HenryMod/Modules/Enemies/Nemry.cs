@@ -64,8 +64,8 @@ namespace HenryMod.Modules.Enemies
             characterEnabled = Modules.Config.CharacterEnableConfig("???");
             if (characterEnabled.Value)
             {
-                characterUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.NemryAchievement>(true);
-                masterySkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.NemryMasteryAchievement>(true);
+                characterUnlockableDef = UnlockableAPI.AddUnlockable<Achievements.NemryAchievement>();
+                masterySkinUnlockableDef = UnlockableAPI.AddUnlockable<Achievements.NemryMasteryAchievement>();
 
                 #region Player
                 characterPrefab = CreateBodyPrefab("NemryBody", true);
@@ -114,7 +114,7 @@ namespace HenryMod.Modules.Enemies
                 //Hook to method with some rewired initialization (or not? Anyway it works) to add custom actions
                 var userDataInit = typeof(UserData).GetMethod("KFIfLMJhIpfzcbhqEXHpaKpGsgeZ", BindingFlags.NonPublic | BindingFlags.Instance);
                 new Hook(userDataInit, (Action<Action<UserData>, UserData>)ExtraInputs.AddCustomActions);
-
+                
                 //Adding custom actions to Settings
                 On.RoR2.UI.SettingsPanelController.Start += SettingsPanelControllerStart;
 
